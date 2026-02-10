@@ -1,0 +1,211 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>My Albums | Neil Almonte</title>
+    <style>
+      body {
+        margin: 0;
+        font-family: Arial, Helvetica, sans-serif;
+        background-color: #f9fafb;
+        color: #111827;
+      }
+
+      nav {
+        position: fixed;
+        top: 0;
+        width: 100%;
+        background: #ffffff;
+        border-bottom: 1px solid #ddd;
+        z-index: 1000;
+      }
+
+      .nav-container {
+        max-width: 1100px;
+        margin: auto;
+        padding: 15px 20px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+
+      .nav-title {
+        font-size: 22px;
+        font-weight: bold;
+        color: #4f46e5;
+        text-decoration: none;
+      }
+      .nav-title:active {
+        font-size: 22px;
+        font-weight: bold;
+        color: #81a3ff;
+        text-decoration: none;
+      }
+      .nav-links a {
+        margin-left: 20px;
+        text-decoration: none;
+        color: #111827;
+        font-weight: bold;
+      }
+
+      .nav-links a:hover {
+        color: #4f46e5;
+      }
+
+      section {
+        padding: 140px 20px 80px;
+        text-align: center;
+        background: linear-gradient(to bottom right, #eef2ff, #f5f3ff);
+        min-height: 100vh;
+      }
+
+      .header-text h1 {
+        font-family: Georgia, serif;
+        font-size: 42px;
+        margin-bottom: 10px;
+      }
+
+      .header-text h1 span {
+        color: #4f46e5;
+      }
+
+      .album-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 30px;
+        max-width: 1100px;
+        margin: 50px auto;
+      }
+
+      .album-card {
+        background: white;
+        border-radius: 20px;
+        overflow: hidden;
+        box-shadow: 0 10px 25px rgba(0, 0, 0, 0.05);
+        transition:
+          transform 0.3s ease,
+          box-shadow 0.3s ease;
+        text-decoration: none;
+        color: inherit;
+        display: block;
+      }
+
+      .album-card:hover {
+        transform: translateY(-10px);
+        box-shadow: 0 20px 40px rgba(79, 70, 229, 0.15);
+      }
+
+      .album-image {
+        width: 100%;
+        height: 250px;
+        object-fit: cover;
+      }
+
+      .album-details {
+        padding: 25px;
+      }
+
+      .album-details h3 {
+        margin: 0;
+        font-size: 22px;
+        color: #4f46e5;
+        font-family: Georgia, serif;
+      }
+
+      .album-details p {
+        color: #6b7280;
+        margin-top: 10px;
+        font-size: 14px;
+      }
+
+      footer {
+        background: #111827;
+        color: white;
+        text-align: center;
+        padding: 20px;
+      }
+    </style>
+  </head>
+  <body>
+    <nav>
+      <div class="nav-container">
+        <a href="landingpage.html" class="nav-title">MyBlog</a>
+        <div class="nav-links">
+          <a href="landingpage.html">Home</a>
+          <a href="biography.html">Biography</a>
+          <a href="Blog1.html">Blog</a>
+          <a href="Gallery.html">Gallery</a>
+        </div>
+      </div>
+    </nav>
+
+    <section>
+      <div class="header-text">
+        <h1>Photo <span>Albums</span></h1>
+        <p>Click an album to view the collection in a new tab</p>
+      </div>
+
+      <div class="album-grid">
+        <a
+          href="photos.html#football-section"
+          class="album-card"
+            title="Football Journey"
+          rel="noopener noreferrer"
+        >
+          <img
+            src="images/socerss.jpeg"
+            class="album-image"
+            alt="Football Album"
+          />
+          <div class="album-details">
+            <h3>Football Journey</h3>
+            <p>Action shots, training sessions, and match highlights.</p>
+          </div>
+        </a>
+
+        <a
+          href="photos.html#personal-section"
+          class="album-card"
+           title="Life and Education"
+          rel="noopener noreferrer"
+        >
+          <img
+            src="images/neil2.jpg"
+            class="album-image"
+            alt="Personal Album"
+          />
+          <div class="album-details">
+            <h3>Life & Education</h3>
+            <p>From childhood memories to college milestones.</p>
+          </div>
+        </a>
+
+        <a
+          href="photos.html#tech-section"
+          class="album-card"
+           title="Tech and Coding"
+          rel="noopener noreferrer"
+        >
+          <img
+            src="images/thecnology.avif"
+            class="album-image"
+            alt="Tech Album"
+          />
+          <div class="album-details">
+            <h3>Tech & Coding</h3>
+            <p>Productivity tools and my journey in IT.</p>
+          </div>
+        </a>
+      </div>
+    </section>
+
+    <footer>
+      <p>© <span id="year"></span> Neil Almonte | Album Hub</p>
+    </footer>
+
+    <script>
+      document.getElementById("year").textContent = new Date().getFullYear();
+    </script>
+  </body>
+</html>
