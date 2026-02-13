@@ -8,9 +8,9 @@
 <style>
 body {
     margin: 0;
-    font-family: Arial, Helvetica, sans-serif;
-    background-color: #f9fafb;
-    color: #111827;
+    font-family: 'Segoe UI', Arial, sans-serif;
+    background-color: #f3f4f6;
+    color: #1f2937;
 }
 
 nav {
@@ -18,7 +18,7 @@ nav {
     top: 0;
     width: 100%;
     background: #ffffff;
-    border-bottom: 1px solid #ddd;
+    border-bottom: 1px solid #e5e7eb;
     z-index: 1000;
 }
 
@@ -30,103 +30,136 @@ nav {
     align-items: center;
 }
 
-.nav-title {
+.nav-title a {
     font-size: 22px;
-    font-weight: bold;
+    font-weight: 800;
     color: #4f46e5;
+    text-decoration: none;
 }
-.nav-title:active {
-    font-size: 22px;
-    font-weight: bold;
-    color: #81a3ff;
-}
+
 section {
-    padding-top: 140px;
-    padding-bottom: 120px;
+    padding-top: 100px;
+    padding-bottom: 80px;
     background: linear-gradient(to bottom right, #eef2ff, #f5f3ff);
 }
 
 .content {
-    max-width: 800px;
+    max-width: 850px;
     margin: auto;
     background: #ffffff;
-    padding: 30px;
+    padding: 50px;
+    border-radius: 12px;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
 }
+
 
 .content h1 {
     font-family: Georgia, serif;
-    font-size: 26px;
+    font-size: 36px;
     text-align: center;
-    text-decoration: underline;
+    color: #111827;
+    margin-bottom: 10px;
 }
 
 .content h2 {
-    font-family: Georgia, serif;
-    font-size: 18px;
+    font-family: 'Segoe UI', sans-serif;
+    font-size: 14px;
     text-align: center;
+    color: #6b7280;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin-bottom: 30px;
 }
 
 .content h3 {
     font-family: Georgia, serif;
-    font-size: 18px;
-    margin-bottom: 10px;
-    text-decoration: underline;
+    font-size: 22px;
+    margin-top: 50px;
+    border-left: 4px solid #4f46e5;
+    padding-left: 15px;
     color: #4f46e5;
+    display: inline-block;
+    width: 100%;
 }
 
-.content p,
+
+.content p, 
 .content li {
     font-family: Tahoma, sans-serif;
     font-size: 13px;
     line-height: 1.6;
     text-align: justify;
+    color: #374151;
 }
 
-.section-img {
-    display: block;
-    width: 100%;
-    max-width: 420px;
-    margin: 20px auto 40px;
-    border-radius: 6px;
-    border: 1px solid #d1d5db;
-}
-
-
-.image-pair {
-    display: flex;
-    justify-content: center;
-    gap: 10px;
+.content p {
+    text-indent: 2em;
     margin-bottom: 15px;
 }
 
-.small-img {
-    width: 120px;
-    border-radius: 6px;
-    border: 1px solid #d1d5db;
+
+.photo-frame {
+    width: 100%; 
+    margin: 30px 0;
+    border: 1px solid #e5e7eb;
+    background: #fff;
+    padding: 10px;
+    box-sizing: border-box;
+}
+
+.photo-frame img {
+    width: 100%;
+    height: 380px;  
+    display: block;
+    object-fit: cover;
 }
 
 .content ol {
-    padding-left: 25px;
+    padding-left: 0;
+    list-style-position: inside;
 }
 
 .content ol > li {
-    margin-bottom: 40px;
+    margin-bottom: 60px;
+    list-style: none;
 }
 
 .content ul {
-    margin-top: 10px;
-    padding-left: 20px;
+    margin-top: 15px;
+    padding-left: 40px;
 }
 
 .content ul li {
     list-style-type: square;
+    margin-bottom: 5px;
+    text-indent: 0;
+}
+
+
+.bottom-nav {
+    text-align: center;
+    margin-top: 60px;
+    padding-top: 20px;
+    border-top: 1px solid #eee;
+}
+
+.bottom-nav a {
+    color: #4f46e5;
+    text-decoration: none;
+    font-weight: 800;
+    font-size: 16px;
+    transition: color 0.2s ease;
+}
+
+.bottom-nav a:hover {
+    color: #818cf8;
 }
 
 footer {
     background: #111827;
     color: white;
     text-align: center;
-    padding: 20px;
+    padding: 40px;
 }
 
 html {
@@ -139,9 +172,7 @@ html {
 
 <nav>
     <div class="nav-container">
-        <a href="index.html" class="nav-title" style="text-decoration:none;">
-            MyBlog
-        </a>
+        <div class="nav-title"><a href="index.html">MyBlog</a></div>
     </div>
 </nav>
 
@@ -150,35 +181,31 @@ html {
 
         <h1>Football Journey Blog</h1>
         <h2>By Neil Almonte</h2>
-        <a href="images/socerss.jpg" target="_blank">
-        <img src="images/socerss.jpeg"
-             alt="Football Journey"
-             class="section-img">
-             </a>
 
-        <ol type="I">
+        <div class="photo-frame">
+            <a href="images/socerss.jpeg" target="Photo">
+            <img src="images/socerss.jpeg" alt="Football Journey Main Image">
+            </a>
+        </div>
 
-            <h3><li>
-                Where the Dream Began: My First Love for Football</h3>
-                <div class="image-pair">
-                     <a href="images/soccer1.jpg" target="_blank">
-                    <img src="images/soccer1.jpg"
-                         alt="Football Dream"
-                         class="small-img">
+        <ol>
+            <li>
+                <h3>I. Where the Dream Began: My First Love for Football</h3>
+                <div class="photo-frame">
+                    <a href="images/soccer1.jpg" target="Photo">
+                    <img src="images/soccer1.jpg" alt="First Love for Football">
                     </a>
                 </div>
 
                 <p>
-                    Football became part of my life because I grew up admiring players like
-                    Messi and Ronaldo, at habang pinapanood ko sila, unti-unti kong narealize
-                    na hindi lang pala ito basta laro kundi isang passion na nagturo sa akin
-                    ng tiyaga at pangarap, at kahit simpleng panonood lang noon, doon nagsimula
-                    ang pagmamahal ko sa football. Habang tumatagal, mas naging malinaw sa akin
-                    na ang football ay hindi lang tungkol sa panalo kundi tungkol din sa effort,
-                    sacrifice, at dedication na binibigay ng isang player. Noong una, hindi ko
-                    pa iniisip na maglalaro ako, pero eventually gusto ko na ring subukan at
-                    maranasan mismo ang saya ng laro. Kahit minsan mahirap, mas lalo akong
-                    na-inspire na ipagpatuloy ito.
+                    Football naging bahagi ng aking buhay dahil lumaki akong humahanga sa mga players gaya nina 
+                    Messi at Ronaldo, at habang pinapanood ko sila, unti-unti kong narealize na hindi lang pala 
+                    ito basta laro kundi isang passion na nagturo sa akin ng tiyaga at pangarap, at kahit simpleng 
+                    panonood lang noon, doon nagsimula ang pagmamahal ko sa football. Habang tumatagal, mas 
+                    naging malinaw sa akin na ang football ay hindi lang tungkol sa panalo kundi tungkol din sa 
+                    effort, sacrifice, at dedication na binibigay ng isang player. Noong una, hindi ko pa iniisip 
+                    na maglalaro ako, pero eventually gusto ko na ring subukan at maranasan mismo ang saya ng laro. 
+                    Kahit minsan mahirap, mas lalo akong na-inspire na ipagpatuloy ito.
                 </p>
 
                 <ul>
@@ -188,25 +215,22 @@ html {
                 </ul>
             </li>
 
-            <h3><li>
-                Chasing the Game While Facing Real-Life Responsibilities</h3>
-                <div class="image-pair">
-                     <a href="images/soccer6.jpg" target="_blank">
-                    <img src="images/soccer6.JPG"
-                         alt="Balancing Life"
-                         class="small-img">
+            <li>
+                <h3>II. Chasing the Game While Facing Real-Life Responsibilities</h3>
+                <div class="photo-frame">
+                    <a href="images/soccer6.JPG" target="Photo">
+                    <img src="images/soccer6.JPG" alt="Balancing Life and Passion">
                     </a>
                 </div>
 
                 <p>
-                    Sa kasalukuyan, minsan nahihirapan akong maglaan ng oras sa football dahil sa 
-                    dami ng schoolworks at gawaing bahay para makatulong sa pamilya, pero kahit 
-                    ganoon, patuloy ko pa ring sinusubukan na mag-practice kahit saglit lang dahil 
-                    ang football ang nagbibigay sa akin ng motivation at stress relief. May mga araw 
-                    na sobrang pagod ako galing school, pero iniisip ko na lang na kahit konting galaw 
-                    o training ay mahalaga pa rin. Kapag pressured ako sa academics, ang football ang 
-                    nagiging takbuhan ko para makapag-isip nang mas malinaw. Dahil dito, mas natutunan kong 
-                    maging responsable at mag-manage ng oras nang maayos.
+                    Sa kasalukuyan, minsan nahihirapan akong maglaan ng oras sa football dahil sa dami ng schoolworks 
+                    at gawaing bahay para makatulong sa pamilya, pero kahit ganoon, patuloy ko pa ring sinusubukan na 
+                    mag-practice kahit saglit lang dahil ang football ang nagbibigay sa akin ng motivation at stress 
+                    relief. May mga araw na sobrang pagod ako galing school, pero iniisip ko na lang na kahit konting 
+                    galaw o training ay mahalaga pa rin. Kapag pressured ako sa academics, ang football ang nagiging 
+                    takbuhan ko para makapag-isip nang mas malinaw. Dahil dito, mas natutunan kong maging responsable 
+                    at mag-manage ng oras nang maayos.
                 </p>
 
                 <ul>
@@ -216,24 +240,21 @@ html {
                 </ul>
             </li>
 
-            <h3><li>
-                Still Moving Forward: Lessons, Hope, and the Road Ahead</h3>
-                <div class="image-pair">
-                    <a href="images/soccer8.jpeg">
-                    <img src="images/soccer8.jpeg"
-                         alt="Hope and Growth"
-                         class="small-img">
+            <li>
+                <h3>III. Still Moving Forward: Lessons, Hope, and the Road Ahead</h3>
+                <div class="photo-frame">
+                    <a href="images/soccer8.jpeg" target="Photo">
+                    <img src="images/soccer8.jpeg" alt="Looking Forward with Hope">
                     </a>
                 </div>
 
                 <p>
-                    Sa huli, ang football journey ko ay puno ng challenges at sacrifices, pero 
-                    pinili kong ipagpatuloy ito dahil marami itong naituro sa akin tungkol sa buhay, 
-                    disiplina, at paniniwala sa sarili. Hindi man malinaw kung saan ako dadalhin ng 
-                    journey na ito, ang mahalaga ay patuloy akong natututo at nag-iimprove bilang isang 
-                    tao at bilang player. Natutunan kong hindi kailangan maging perfect basta may effort 
-                    at consistency. Naniniwala akong sa bawat maliit na hakbang at pagsubok, mas nagiging 
-                    matatag ako at mas handa sa mga darating pang challenges sa buhay.
+                    Sa huli, ang football journey ko ay puno ng challenges at sacrifices, pero pinili kong ipagpatuloy 
+                    ito dahil marami itong naituro sa akin tungkol sa buhay, disiplina, at paniniwala sa sarili. 
+                    Hindi man malinaw kung saan ako dadalhin ng journey na ito, ang mahalaga ay patuloy akong natututo 
+                    at nag-iimprove bilang isang tao at bilang player. Natutunan kong hindi kailangan maging perfect 
+                    basta may effort at consistency. Naniniwala akong sa bawat maliit na hakbang at pagsubok, mas 
+                    nagiging matatag ako at mas handa sa mga darating pang challenges sa buhay.
                 </p>
 
                 <ul>
@@ -242,23 +263,19 @@ html {
                     <li>Continuing the journey with hope</li>
                 </ul>
             </li>
-
         </ol>
 
-        <p style="text-align:center; margin-top:40px;">
-            <a href="blog1.html" style="color:#4f46e5; font-weight:bold; text-decoration:none;">
-                ← Previous |
-            </a>
-            <a href="blog3.html" style="color:#4f46e5; font-weight:bold; text-decoration:none;">
-                | Next →
-            </a>
-        </p>
+        <div class="bottom-nav">
+            <a href="blog1.html">← PREVIOUS BLOG</a> 
+            <span style="margin: 0 20px; color: #cbd5e1;">|</span>
+            <a href="blog3.html">NEXT BLOG →</a>
+        </div>
 
     </div>
 </section>
 
 <footer>
-    © 2025 Neil Almonte | BLOG 2
+    © 2025 Neil Almonte | FOOTBALL SERIES BLOG 2
 </footer>
 
 </body>

@@ -1,0 +1,275 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Artist Details | My Beats</title>
+    <style>
+      body {
+        margin: 0;
+        font-family: "Segoe UI", Tahoma, sans-serif;
+        background: #111827;
+        color: white;
+      }
+
+      /* Hero Section */
+      .hero {
+        height: 400px;
+        background:
+          linear-gradient(to bottom, rgba(17, 24, 39, 0.5), #111827),
+          url("images/artist1-banner.jpg");
+        background-size: cover;
+        background-position: center;
+        display: flex;
+        align-items: flex-end;
+        padding: 50px;
+      }
+
+      .album-header {
+        display: flex;
+        gap: 30px;
+        align-items: center;
+        max-width: 1000px;
+        margin: auto;
+        width: 100%;
+      }
+      .album-art {
+        width: 200px;
+        height: 200px;
+        border-radius: 8px;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+      }
+
+      .info h1 {
+        font-size: 48px;
+        margin: 0;
+        font-family: Georgia, serif;
+      }
+      .info p {
+        color: #9ca3af;
+        margin: 5px 0;
+      }
+
+      /* Song List */
+      .song-container {
+        max-width: 1000px;
+        margin: 40px auto;
+        padding: 0 50px;
+      }
+
+      table {
+        width: 100%;
+        border-collapse: collapse;
+        text-align: left;
+      }
+      th {
+        color: #6b7280;
+        text-transform: uppercase;
+        font-size: 12px;
+        border-bottom: 1px solid #374151;
+        padding: 10px;
+      }
+      td {
+        padding: 15px 10px;
+        border-bottom: 1px solid #1f2937;
+      }
+
+      .track-row:hover {
+        background: rgba(255, 255, 255, 0.05);
+      }
+      .track-title {
+        font-weight: bold;
+        color: white;
+      }
+
+      /* NEW: Play Button Link */
+      .play-link {
+        color: #4f46e5;
+        text-decoration: none;
+        font-weight: bold;
+        font-size: 14px;
+        border: 1px solid #4f46e5;
+        padding: 5px 12px;
+        border-radius: 20px;
+        transition: 0.3s;
+      }
+      .play-link:hover {
+        background: #4f46e5;
+        color: white;
+      }
+
+      .back-btn {
+        display: inline-block;
+        margin-top: 20px;
+        color: #4f46e5;
+        text-decoration: none;
+        font-weight: bold;
+      }
+    </style>
+  </head>
+  <body id="caesar">
+    <h2>
+      <a href="Mybeats.html" class="back-btn"
+        >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;← Back to Artists</a
+      >
+    </h2>
+    <div class="hero">
+      <div class="album-header">
+        <img src="images/album-cover.jpg" class="album-art" alt="Album Cover" />
+        <div class="info">
+          <p>ARTIST PREFERENCE</p>
+          <h1>Daniel Caesar</h1>
+          <p>3 Favorite Tracks • Album</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="song-container">
+      <table>
+        <thead>
+          <tr>
+            <th>#</th>
+            <th>Title</th>
+            <th>Artist</th>
+            <th>Action</th>
+            <th>Album</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr class="track-row">
+            <td>1</td>
+            <td class="track-title">Who knows</td>
+            <td>Daniel Caesar</td>
+            <td><a href="player.html" class="play-link">▶ Play</a></td>
+            <td>Son Of Spergy</td>
+          </tr>
+          <tr class="track-row">
+            <td>2</td>
+            <td class="track-title">Transform</td>
+            <td>Daniel Ceasar, Charlotte Day Wilson</td>
+            <td><a href="player.html" class="play-link">▶ Play</a></td>
+            <td>Freudian</td>
+          </tr>
+          <tr class="track-row">
+            <td>3</td>
+            <td class="track-title">Always</td>
+            <td>Daniel Caesar</td>
+            <td><a href="player.html" class="play-link">▶ Play</a></td>
+            <td>NEVER ENOUGH</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </body>
+  <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+  <body id="carpenters">
+    <h2>
+      <a href="Mybeats.html" class="back-btn"
+        >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;← Back to Artists</a
+      >
+    </h2>
+    <div class="hero">
+      <div class="album-header">
+        <img src="images/album-cover.jpg" class="album-art" alt="Album Cover" />
+        <div class="info">
+          <p>ARTIST PREFERENCE</p>
+          <h1>Carpenters</h1>
+          <p>3 Favorite Tracks • Album</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="song-container">
+      <table>
+        <thead>
+          <tr>
+            <th>#</th>
+            <th>Title</th>
+            <th>Artist</th>
+            <th>Action</th>
+            <th>Album</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr class="track-row">
+            <td>1</td>
+            <td class="track-title">First Person Shooter</td>
+            <td>Drake ft. J. Cole</td>
+            <td><a href="player.html" class="play-link">▶ Play</a></td>
+            <td>4:07</td>
+          </tr>
+          <tr class="track-row">
+            <td>2</td>
+            <td class="track-title">Virginia Beach</td>
+            <td>Drake</td>
+            <td><a href="player.html" class="play-link">▶ Play</a></td>
+            <td>4:11</td>
+          </tr>
+          <tr class="track-row">
+            <td>3</td>
+            <td class="track-title">Slime You Out</td>
+            <td>Drake ft. SZA</td>
+            <td><a href="player.html" class="play-link">▶ Play</a></td>
+            <td>5:10</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </body>
+<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+  <body id="airsupply">
+    <h2>
+      <a href="Mybeats.html" class="back-btn"
+        >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;← Back to Artists</a
+      >
+    </h2>
+    <div class="hero">
+      <div class="album-header">
+        <img src="images/album-cover.jpg" class="album-art" alt="Album Cover" />
+        <div class="info">
+          <p>ARTIST PREFERENCE</p>
+          <h1>Air Supply</h1>
+          <p>3 Favorite Tracks • Album</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="song-container">
+      <table>
+        <thead>
+          <tr>
+            <th>#</th>
+            <th>Title</th>
+            <th>Artist</th>
+            <th>Action</th>
+            <th>Album</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr class="track-row">
+            <td>1</td>
+            <td class="track-title">First Person Shooter</td>
+            <td>Drake ft. J. Cole</td>
+            <td><a href="player.html" class="play-link">▶ Play</a></td>
+            <td>4:07</td>
+          </tr>
+          <tr class="track-row">
+            <td>2</td>
+            <td class="track-title">Virginia Beach</td>
+            <td>Drake</td>
+            <td><a href="player.html" class="play-link">▶ Play</a></td>
+            <td>4:11</td>
+          </tr>
+          <tr class="track-row">
+            <td>3</td>
+            <td class="track-title">Slime You Out</td>
+            <td>Drake ft. SZA</td>
+            <td><a href="player.html" class="play-link">▶ Play</a></td>
+            <td>5:10</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </body>
+  <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+</html>

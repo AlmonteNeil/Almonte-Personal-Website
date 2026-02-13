@@ -1,4 +1,4 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
@@ -8,9 +8,9 @@
     <style>
       body {
         margin: 0;
-        font-family: Arial, Helvetica, sans-serif;
-        background-color: #f9fafb;
-        color: #111827;
+        font-family: 'Segoe UI', Arial, sans-serif;
+        background-color: #f3f4f6;
+        color: #1f2937;
       }
 
       nav {
@@ -18,7 +18,7 @@
         top: 0;
         width: 100%;
         background: #ffffff;
-        border-bottom: 1px solid #ddd;
+        border-bottom: 1px solid #e5e7eb;
         z-index: 1000;
       }
 
@@ -31,84 +31,112 @@
         align-items: center;
       }
 
-      .nav-title {
+      .nav-title a {
         font-size: 22px;
-        font-weight: bold;
+        font-weight: 800;
         color: #4f46e5;
+        text-decoration: none;
       }
-      .nav-title:active {
-        font-size: 22px;
-        font-weight: bold;
-        color: #81a3ff;
-      }
+
       section {
-        padding-top: 140px;
-        padding-bottom: 120px;
+        padding-top: 100px;
+        padding-bottom: 80px;
         background: linear-gradient(to bottom right, #eef2ff, #f5f3ff);
       }
 
       .content {
-        max-width: 800px;
+        max-width: 850px;
         margin: auto;
         background: #ffffff;
-        padding: 30px;
+        padding: 50px;
+        border-radius: 12px;
+        box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
       }
 
+     
       .content h1 {
         font-family: Georgia, serif;
-        font-size: 26px;
+        font-size: 36px;
         text-align: center;
-        text-decoration: underline;
+        color: #111827;
+        margin-bottom: 10px;
       }
 
       .content h2 {
-        font-family: Georgia, serif;
-        font-size: 18px;
+        font-family: 'Segoe UI', sans-serif;
+        font-size: 14px;
         text-align: center;
+        color: #6b7280;
+        text-transform: uppercase;
+        letter-spacing: 2px;
+        margin-bottom: 30px;
       }
 
       .content h3 {
         font-family: Georgia, serif;
-        font-size: 18px;
-        margin-top: 40px;
-        text-decoration: underline;
+        font-size: 22px;
+        margin-top: 50px;
+        border-left: 4px solid #4f46e5;
+        padding-left: 15px;
         color: #4f46e5;
+        display: inline-block;
+        width: 100%;
       }
 
+   
       .content p {
         font-family: Tahoma, sans-serif;
         font-size: 13px;
         line-height: 1.6;
         text-align: justify;
         text-indent: 2em;
+        color: #374151;
+        margin-bottom: 15px;
       }
 
-      .section-img {
-        display: block;
+     
+      .photo-frame {
         width: 100%;
-        max-width: 420px;
-        height: auto;
-        margin: 20px auto;
-        border-radius: 6px;
-        border: 1px solid #d1d5db;
+        margin: 30px 0;
+        border: 1px solid #e5e7eb;
+        background: #fff;
+        padding: 10px;
+        box-sizing: border-box;
       }
 
-      /* SMALL IMAGE PER H3 */
-      .small-img {
-        align-items: center;
-        position: relative;
+      .photo-frame img {
+        width: 100%;
+        height: 380px;
         display: block;
-        width: 120px;
-        border-radius: 6px;
-        border: 1px solid #d1d5db;
-        margin: 10px 0 15px;
+        object-fit: cover;
       }
 
+      
+      .bottom-nav {
+        text-align: center;
+        margin-top: 60px;
+        padding-top: 20px;
+        border-top: 1px solid #eee;
+      }
+
+      .bottom-nav a {
+        color: #4f46e5;
+        text-decoration: none;
+        font-weight: 800;
+        font-size: 16px;
+        transition: color 0.2s ease;
+      }
+
+      .bottom-nav a:hover {
+        color: #818cf8;
+      }
+
+    
       footer {
         background: #111827;
         color: white;
         text-align: center;
-        padding: 20px;
+        padding: 40px;
       }
 
       html {
@@ -120,14 +148,7 @@
   <body>
     <nav>
       <div class="nav-container">
-        <div class="nav-title">
-          <a
-            href="index.html"
-            style="color: #4f46e5; text-decoration: none"
-          >
-            MyBlog
-          </a>
-        </div>
+        <div class="nav-title"><a href="index.html">MyBlog</a></div>
       </div>
     </nav>
 
@@ -135,13 +156,13 @@
       <div class="content">
         <h1>Future Goals</h1>
         <h2>Dec 10, 2023 • Growth</h2>
-        <a href="images/neil3.jpg" target="_blank">
-          <img
-            src="images/neil3.jpg"
-            alt="Future Goals Image"
-            class="section-img"
-          />
-        </a>
+
+        <div class="photo-frame">
+          <a href="images/neil3.jpg" target="Photo">
+          <img src="images/neil3.jpg" alt="Future Goals Image" />
+          </a>
+        </div>
+
         <h2>Chasing Goals On and Off the Field</h2>
         <p>
           Bilang isang college student, hindi madali ang pagsabayin ang
@@ -152,16 +173,12 @@
           education and my passion for football.
         </p>
 
-        <h2>The Balancing Act of School and Football</h2>
-
         <h3>Life as a Student and playing football</h3>
-        <a href="images/soccer2.jpg" target="_blank">
-          <img
-            src="images/soccer2.jpg"
-            alt="Life as a Student and Football"
-            class="small-img"
-          />
-        </a>
+        <div class="photo-frame">
+          <a href="images/soccer2.jpg" target="Photo">
+          <img src="images/soccer2.jpg" alt="Life as a Student and Football" />
+          </a>
+        </div>
         <p>
           Being a college student while actively training in football requires
           discipline and sacrifice. Pagkatapos ng training, madalas pagod na ang
@@ -171,13 +188,11 @@
         </p>
 
         <h3>The Skills That Will Shape My Football Journey</h3>
-        <a href="images/soccerrr.jpg" target="_blank">
-          <img
-            src="images/soccerrr.jpg"
-            alt="Skills Shaping Football Journey"
-            class="small-img"
-          />
-        </a>
+        <div class="photo-frame">
+          <a href="images/soccerrr.jpg" target="Photo">
+          <img src="images/soccerrr.jpg" alt="Skills Shaping Football Journey" />
+          </a>
+        </div>
         <p>
           Football taught me important life skills such as discipline, teamwork,
           consistency, and mental toughness. These skills are not only useful on
@@ -187,13 +202,11 @@
         </p>
 
         <h3>What Coaches Look for in Student Football Players</h3>
-        <a href="images/soccer4.jpeg" target="_blank">
-          <img
-            src="images/soccer4.jpeg"
-            alt="Coaches Looking at Players"
-            class="small-img"
-          />
-        </a>
+        <div class="photo-frame">
+          <a href="images/soccer4.jpeg" target="Photo">
+          <img src="images/soccer4.jpeg" alt="Coaches Looking at Players" />
+          </a>
+        </div>
         <p>
           Based on my observation, coaches value attitude and commitment as much
           as talent. Mahalaga ang respeto, discipline, at willingness to learn.
@@ -202,13 +215,11 @@
         </p>
 
         <h3>My Dream Football Project</h3>
-        <a href="images/socers.jpg" target="_blank">
-          <img
-            src="images/socers.jpg"
-            alt="Dream Football Project"
-            class="small-img"
-          />
-        </a>
+        <div class="photo-frame">
+          <a href="images/socers.jpg" target="Photo">
+          <img src="images/socers.jpg" alt="Dream Football Project" />
+          </a>
+        </div>
         <p>
           My dream is to be part of a football program that supports both
           education and athletic development. I want to help create
@@ -227,25 +238,14 @@
           as a student-athlete.
         </p>
 
-        <p style="text-align: center; margin-top: 40px">
-          <a
-            href="blog2.html"
-            style="color: #4f46e5; font-weight: bold; text-decoration: none"
-            title="Go to Blog 2"
-          >
-            ← Previous |
-          </a>
-          <a
-            href="index.html"
-            style="color: #4f46e5; font-weight: bold; text-decoration: none"
-            title="Go to Landing Page"
-          >
-            | ⌂ Home
-          </a>
-        </p>
+        <div class="bottom-nav">
+          <a href="blog2.html">← PREVIOUS</a>
+          <span style="margin: 0 20px; color: #cbd5e1;">|</span>
+          <a href="index.html">⌂ HOME</a>
+        </div>
       </div>
     </section>
 
-    <footer>© 2025 Neil Almonte | BLOG 3</footer>
+    <footer>© 2025 Neil Almonte | FUTURE SERIES BLOG 3</footer>
   </body>
 </html>

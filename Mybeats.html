@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Beats | Artists</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, Helvetica, sans-serif;
+            background-color: #f9fafb;
+            color: #111827;
+            scroll-behavior: smooth;
+        }
+
+        /* --- Navigation Bar --- */
+        nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: #ffffff;
+            border-bottom: 1px solid #ddd;
+            z-index: 1000;
+        }
+
+        .nav-container {
+            max-width: 1100px;
+            margin: auto;
+            padding: 15px 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .nav-title {
+            font-size: 22px;
+            font-weight: 800;
+            color: #4f46e5;
+            text-decoration: none;
+        }
+
+        .nav-links a {
+            margin-left: 20px;
+            text-decoration: none;
+            color: #111827;
+            font-weight: bold;
+            transition: color 0.2s;
+        }
+
+        .nav-links a:hover, .nav-links a.active {
+            color: #4f46e5;
+        }
+
+        /* --- Banner Section (No Profile Pic) --- */
+        .section-banner {
+            width: 100%;
+            height: 300px;
+            background-image: url("images/banner.jpg");
+            background-size: cover;
+            background-position: center;
+            margin-top: 50px;
+        }
+
+        /* --- Main Content Card --- */
+        .content {
+            position: relative;
+            max-width: 1100px;
+            margin: -80px auto 50px auto; /* Overlaps the banner slightly */
+            background: #ffffff;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+            padding: 60px 40px; /* Reduced top padding since photo is gone */
+            z-index: 1;
+            text-align: center;
+        }
+
+        /* Typography using Georgia */
+        h1 {
+            font-family: Georgia, serif; 
+            font-size: 42px;
+            margin-bottom: 10px;
+            color: #111827;
+        }
+
+        h1 span {
+            color: #4f46e5;
+        }
+
+        .subtitle {
+            color: #6b7280;
+            margin-bottom: 50px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            font-size: 12px;
+        }
+
+        /* --- Artist Grid --- */
+        .artist-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+            text-align: left;
+        }
+
+        .artist-card {
+            background: white;
+            border-radius: 20px;
+            overflow: hidden;
+            text-decoration: none;
+            color: inherit;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.05);
+            transition: all 0.3s ease;
+            border: 1px solid #f3f4f6;
+        }
+
+        .artist-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(79, 70, 229, 0.15);
+            border-color: #4f46e5;
+        }
+
+        .artist-card img {
+            width: 100%;
+            height: 250px;
+            object-fit: cover;
+        }
+
+        .artist-card-info {
+            padding: 25px;
+        }
+
+        .artist-card-info h3 {
+            margin: 0;
+            color: #4f46e5;
+            font-size: 22px;
+            font-family: Georgia, serif; 
+        }
+
+        .artist-card-info p {
+            color: #6b7280;
+            font-size: 14px;
+            margin-top: 10px;
+        }
+
+        footer {
+            background: #111827;
+            color: white;
+            text-align: center;
+            padding: 20px;
+        }
+    </style>
+</head>
+<body>
+
+<nav>
+  <div class="nav-container">
+    <a href="index.html" class="nav-title">MyBlog</a>
+    <div class="nav-links">
+      <a href="index.html">Home</a>
+      <a href="biography.html">Biography</a>
+      <a href="blog1.html">Blog</a>
+      <a href="Gallery.html">Gallery</a>
+      <a href="Mybeats.html" class="active">My beats</a>
+    </div>
+  </div>
+</nav>
+
+<div class="section-banner"></div>
+
+<div class="content">
+    <h1>My <span>Beats</span></h1>
+    <p class="subtitle">Select an artist to view their tracks</p>
+
+    <div class="artist-grid">
+        <a href="artist-detail.html#caesar" class="artist-card">
+            <img src="images/artist1.jpg" alt="Daniel Caesar" />
+            <div class="artist-card-info">
+                <h3>Daniel Caesar</h3>
+                <p>Explore the latest tracks from the 6ix God.</p>
+            </div>
+        </a>
+
+        <a href="artist-detail.html#carpenters" class="artist-card">
+            <img src="images/artist2.jpg" alt="Carpenters" />
+            <div class="artist-card-info">
+                <h3>Carpenters</h3>
+                <p>Explore the latest tracks from the 6ix God.</p>
+            </div>
+        </a>
+
+        <a href="artist-detail.html#airsupply" class="artist-card">
+            <img src="images/artist2.jpg" alt="Airsupply" />
+            <div class="artist-card-info">
+                <h3>Air Supply</h3>
+                <p>Explore the latest tracks from the 6ix God.</p>
+            </div>
+        </a>
+
+        
+    </div>
+</div>
+<footer>
+    <p>© <span id="year"></span> Neil Almonte | My Beats</p>
+</footer>
+
+<script>
+    document.getElementById("year").textContent = new Date().getFullYear();
+</script>
+
+</body>
+</html>
