@@ -3,26 +3,42 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Artist Details | My Beats</title>
+    <title>Genre Details | My Beats</title>
     <style>
       body {
         margin: 0;
         font-family: "Segoe UI", Tahoma, sans-serif;
         background: #111827;
         color: white;
+        overflow-y: hidden;
       }
 
-      /* Hero Section */
       .hero {
         height: 400px;
-        background:
-          linear-gradient(to bottom, rgba(17, 24, 39, 0.5), #111827),
-          url("images/artist1-banner.jpg");
         background-size: cover;
         background-position: center;
         display: flex;
         align-items: flex-end;
         padding: 50px;
+        /* Default background in case image fails */
+        background-color: #1f2937;
+      }
+
+      /* Specific Hero Backgrounds per Genre Section */
+      #rnb-hero {
+        background-image:
+          linear-gradient(to bottom, rgba(17, 24, 39, 0.4), #111827),
+          url("images/rnb-banner.jpg");
+      }
+      #indie-hero {
+        background-image:
+          linear-gradient(to bottom, rgba(17, 24, 39, 0.4), #111827),
+          url("images/indie-banner.jpg");
+      }
+      #hiphop-hero {
+        background-image:
+          linear-gradient(to bottom, rgba(17, 24, 39, 0.4), #111827),
+          url("images/hiphop-banner.jpg");
       }
 
       .album-header {
@@ -38,6 +54,7 @@
         height: 200px;
         border-radius: 8px;
         box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+        object-fit: cover;
       }
 
       .info h1 {
@@ -50,7 +67,6 @@
         margin: 5px 0;
       }
 
-      /* Song List */
       .song-container {
         max-width: 1000px;
         margin: 40px auto;
@@ -82,7 +98,6 @@
         color: white;
       }
 
-      /* NEW: Play Button Link */
       .play-link {
         color: #4f46e5;
         text-decoration: none;
@@ -104,22 +119,39 @@
         color: #4f46e5;
         text-decoration: none;
         font-weight: bold;
+        border-bottom: 2px solid transparent;
+      }
+      .back-btn:hover {
+        border-bottom: 2px solid #4f46e5;
+        color: #6a63fa;
+        transition-duration: 0.2s;
+      }
+
+      .spacer {
+        height: 300px;
       }
     </style>
   </head>
-  <body id="caesar">
+
+  <body id="rnb">
     <h2>
-      <a href="Mybeats.html" class="back-btn"
-        >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;← Back to Artists</a
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a
+        href="Mybeats.html"
+        class="back-btn"
+        >← Back to Genres</a
       >
     </h2>
-    <div class="hero">
+    <div class="hero" >
       <div class="album-header">
-        <img src="images/album-cover.jpg" class="album-art" alt="Album Cover" />
+        <img
+          src="images/artist.jpg"
+          class="album-art"
+          alt="R&B Collection"
+        />
         <div class="info">
-          <p>ARTIST PREFERENCE</p>
-          <h1>Daniel Caesar</h1>
-          <p>3 Favorite Tracks • Album</p>
+          <p>GENRE SELECTION</p>
+          <h1>R&B & Soul</h1>
+          <p>Top Essential Tracks • Curated Collection</p>
         </div>
       </div>
     </div>
@@ -138,138 +170,155 @@
         <tbody>
           <tr class="track-row">
             <td>1</td>
-            <td class="track-title">Who knows</td>
-            <td>Daniel Caesar</td>
-            <td><a href="player.html" class="play-link">▶ Play</a></td>
-            <td>Son Of Spergy</td>
-          </tr>
-          <tr class="track-row">
-            <td>2</td>
-            <td class="track-title">Transform</td>
-            <td>Daniel Ceasar, Charlotte Day Wilson</td>
-            <td><a href="player.html" class="play-link">▶ Play</a></td>
-            <td>Freudian</td>
-          </tr>
-          <tr class="track-row">
-            <td>3</td>
             <td class="track-title">Always</td>
             <td>Daniel Caesar</td>
             <td><a href="player.html" class="play-link">▶ Play</a></td>
             <td>NEVER ENOUGH</td>
           </tr>
-        </tbody>
-      </table>
-    </div>
-  </body>
-  <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
-  <body id="carpenters">
-    <h2>
-      <a href="Mybeats.html" class="back-btn"
-        >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;← Back to Artists</a
-      >
-    </h2>
-    <div class="hero">
-      <div class="album-header">
-        <img src="images/album-cover.jpg" class="album-art" alt="Album Cover" />
-        <div class="info">
-          <p>ARTIST PREFERENCE</p>
-          <h1>Carpenters</h1>
-          <p>3 Favorite Tracks • Album</p>
-        </div>
-      </div>
-    </div>
-
-    <div class="song-container">
-      <table>
-        <thead>
-          <tr>
-            <th>#</th>
-            <th>Title</th>
-            <th>Artist</th>
-            <th>Action</th>
-            <th>Album</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr class="track-row">
-            <td>1</td>
-            <td class="track-title">First Person Shooter</td>
-            <td>Drake ft. J. Cole</td>
-            <td><a href="player.html" class="play-link">▶ Play</a></td>
-            <td>4:07</td>
-          </tr>
           <tr class="track-row">
             <td>2</td>
-            <td class="track-title">Virginia Beach</td>
-            <td>Drake</td>
+            <td class="track-title">Pink + White</td>
+            <td>Frank Ocean</td>
             <td><a href="player.html" class="play-link">▶ Play</a></td>
-            <td>4:11</td>
+            <td>Blonde</td>
           </tr>
           <tr class="track-row">
             <td>3</td>
-            <td class="track-title">Slime You Out</td>
-            <td>Drake ft. SZA</td>
+            <td class="track-title">Redbone</td>
+            <td>Childish Gambino</td>
             <td><a href="player.html" class="play-link">▶ Play</a></td>
-            <td>5:10</td>
+            <td>"Awaken, My Love!"</td>
           </tr>
         </tbody>
       </table>
     </div>
-  </body>
-<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
-  <body id="airsupply">
-    <h2>
-      <a href="Mybeats.html" class="back-btn"
-        >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;← Back to Artists</a
-      >
-    </h2>
-    <div class="hero">
-      <div class="album-header">
-        <img src="images/album-cover.jpg" class="album-art" alt="Album Cover" />
-        <div class="info">
-          <p>ARTIST PREFERENCE</p>
-          <h1>Air Supply</h1>
-          <p>3 Favorite Tracks • Album</p>
+
+    <div class="spacer"></div>
+
+    <div id="indie">
+      <h2>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a
+          href="Mybeats.html"
+          class="back-btn"
+          >← Back to Genres</a
+        >
+      </h2>
+      <div class="hero" >
+        <div class="album-header">
+          <img
+            src="images/artist2.jpg"
+            class="album-art"
+            alt="Indie Collection"
+          />
+          <div class="info">
+            <p>GENRE SELECTION</p>
+            <h1>Indie & Pop</h1>
+            <p>Acoustic & Alternative Vibes</p>
+          </div>
         </div>
+      </div>
+
+      <div class="song-container">
+        <table>
+          <thead>
+            <tr>
+              <th>#</th>
+              <th>Title</th>
+              <th>Artist</th>
+              <th>Action</th>
+              <th>Album</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr class="track-row">
+              <td>1</td>
+              <td class="track-title">Pluto Projector</td>
+              <td>Rex Orange County</td>
+              <td><a href="player.html" class="play-link">▶ Play</a></td>
+              <td>Pony</td>
+            </tr>
+            <tr class="track-row">
+              <td>2</td>
+              <td class="track-title">Lovers Rock</td>
+              <td>TV Girl</td>
+              <td><a href="player.html" class="play-link">▶ Play</a></td>
+              <td>French Exit</td>
+            </tr>
+            <tr class="track-row">
+              <td>3</td>
+              <td class="track-title">Bags</td>
+              <td>Clairo</td>
+              <td><a href="player.html" class="play-link">▶ Play</a></td>
+              <td>Immunity</td>
+            </tr>
+          </tbody>
+        </table>
       </div>
     </div>
 
-    <div class="song-container">
-      <table>
-        <thead>
-          <tr>
-            <th>#</th>
-            <th>Title</th>
-            <th>Artist</th>
-            <th>Action</th>
-            <th>Album</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr class="track-row">
-            <td>1</td>
-            <td class="track-title">First Person Shooter</td>
-            <td>Drake ft. J. Cole</td>
-            <td><a href="player.html" class="play-link">▶ Play</a></td>
-            <td>4:07</td>
-          </tr>
-          <tr class="track-row">
-            <td>2</td>
-            <td class="track-title">Virginia Beach</td>
-            <td>Drake</td>
-            <td><a href="player.html" class="play-link">▶ Play</a></td>
-            <td>4:11</td>
-          </tr>
-          <tr class="track-row">
-            <td>3</td>
-            <td class="track-title">Slime You Out</td>
-            <td>Drake ft. SZA</td>
-            <td><a href="player.html" class="play-link">▶ Play</a></td>
-            <td>5:10</td>
-          </tr>
-        </tbody>
-      </table>
+    <div class="spacer"></div>
+
+    <div id="hiphop">
+      <h2>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a
+          href="Mybeats.html"
+          class="back-btn"
+          >← Back to Genres</a
+        >
+      </h2>
+      <div class="hero" >
+        <div class="album-header">
+          <img
+            src="images/artist3.jpg"
+            class="album-art"
+            alt="Hip Hop Collection"
+          />
+          <div class="info">
+            <p>GENRE SELECTION</p>
+            <h1>Hip Hop</h1>
+            <p>Beats, Bars, and Rhythms</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="song-container">
+        <table>
+          <thead>
+            <tr>
+              <th>#</th>
+              <th>Title</th>
+              <th>Artist</th>
+              <th>Action</th>
+              <th>Album</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr class="track-row">
+              <td>1</td>
+              <td class="track-title">SICKO MODE</td>
+              <td>Travis Scott</td>
+              <td><a href="player.html" class="play-link">▶ Play</a></td>
+              <td>ASTROWORLD</td>
+            </tr>
+            <tr class="track-row">
+              <td>2</td>
+              <td class="track-title">Alright</td>
+              <td>Kendrick Lamar</td>
+              <td><a href="player.html" class="play-link">▶ Play</a></td>
+              <td>To Pimp a Butterfly</td>
+            </tr>
+            <tr class="track-row">
+              <td>3</td>
+              <td class="track-title">90210</td>
+              <td>Travis Scott</td>
+              <td><a href="player.html" class="play-link">▶ Play</a></td>
+              <td>Rodeo</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
     </div>
+
+    <div class="spacer"></div>
   </body>
-  <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
 </html>

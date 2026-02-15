@@ -1,304 +1,332 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Biography | Neil Almonte</title>
 
     <style>
-        body {
-            margin: 0;
-            font-family: Arial, Helvetica, sans-serif;
-            background-color: #f9fafb;
-            color: #111827;
-            scroll-behavior: smooth;
-        }
+      body {
+        margin: 0;
+        font-family: Arial, Helvetica, sans-serif;
+        background-color: #f9fafb;
+        color: #111827;
+        scroll-behavior: smooth;
+        overflow-y: hidden;
+      }
 
-        /* --- Navigation Bar (Matched to your Photo) --- */
-        nav {
-            position: fixed;
-            top: 0;
-            width: 100%;
-            background: #ffffff;
-            border-bottom: 1px solid #ddd;
-            z-index: 1000;
-        }
+     
+      nav {
+        position: fixed;
+        top: 0;
+        width: 100%;
+        background: #ffffff;
+        border-bottom: 1px solid #ddd;
+        z-index: 1000;
+      }
 
-        .nav-container {
-            max-width: 1100px;
-            margin: auto;
-            padding: 15px 20px;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
+      .nav-container {
+        max-width: 1100px;
+        margin: auto;
+        padding: 15px 20px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
 
-        .nav-title {
-            font-size: 22px;
-            font-weight: 800;
-            color: #4f46e5;
-            text-decoration: none;
-        }
+      .nav-title {
+        font-size: 22px;
+        font-weight: 800;
+        color: #4f46e5;
+        text-decoration: none;
+        border-bottom: 2px solid transparent;
+      }
+        .nav-title:hover {
+        border-bottom: 2px solid #4f46e5;
+        color: #6a63fa;
+        transition-duration: 0.2s;
+      }
 
-        .nav-links a {
-            margin-left: 20px;
-            text-decoration: none;
-            color: #111827;
-            font-weight: bold;
-            transition: color 0.2s;
-        }
+      .nav-links a {
+        margin-left: 20px;
+        text-decoration: none;
+        color: #111827;
+        font-weight: bold;
+        transition: color 0.2s;
+      }
 
-        .nav-links a:hover {
-            color: #4f46e5;
-        }
+      .nav-links a:hover {
+        color: #4f46e5;
+      }
 
-        .nav-links a.active {
-            color: #4f46e5;
-        }
+      .nav-links a.active {
+        color: #4f46e5;
+      }
 
-        /* --- Content Layout --- */
-        section {
-            padding-top: 140px;
-            padding-bottom: 120px;
-            background: linear-gradient(to bottom right, #eef2ff, #f5f3ff);
-        }
+     
+      section {
+        padding-top: 140px;
+        padding-bottom: 120px;
+        background: linear-gradient(to bottom right, #eef2ff, #f5f3ff);
+      }
 
-        .content {
-            max-width: 850px;
-            margin: auto;
-            background: #ffffff;
-            padding: 50px;
-            border-radius: 12px;
-            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
-        }
+      .content {
+        max-width: 850px;
+        margin: auto;
+        background: #ffffff;
+        padding: 50px;
+        border-radius: 12px;
+        box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+      }
 
-        .content h1 {
-            font-size: 36px;
-            text-align: center;
-            color: #111827;
-            margin-bottom: 10px;
-        }
+      .content h1 {
+        font-size: 36px;
+        text-align: center;
+        color: #111827;
+        margin-bottom: 10px;
+      }
 
-        .content h2 {
-            font-size: 14px;
-            text-align: center;
-            color: #6b7280;
-            text-transform: uppercase;
-            letter-spacing: 2px;
-            margin-bottom: 30px;
-        }
+      .content h2 {
+        font-size: 14px;
+        text-align: center;
+        color: #6b7280;
+        text-transform: uppercase;
+        letter-spacing: 2px;
+        margin-bottom: 30px;
+      }
 
-        .content h2 a {
-            text-decoration: none;
-            color: #4f46e5;
-            font-weight: bold;
-        }
+      .content h2 a {
+        text-decoration: none;
+        color: #4f46e5;
+        font-weight: bold;
+        border-bottom: 2px solid transparent;
+      }
+      .content h2 a:hover {
+        border-bottom: 2px solid #4f46e5;
+        color: #6a63fa;
+        transition-duration: 0.2s;
+      }
+      .content h3 {
+        font-size: 22px;
+        margin-top: 60px;
+        border-left: 4px solid #4f46e5;
+        padding-left: 15px;
+        color: #4f46e5;
+      }
 
-        .content h3 {
-            font-size: 22px;
-            margin-top: 60px;
-            border-left: 4px solid #4f46e5;
-            padding-left: 15px;
-            color: #4f46e5;
-        }
+      .profile-pic {
+        display: block;
+        width: 200px;
+        height: 200px;
+        border-radius: 50%;
+        object-fit: cover;
+        margin: 0 auto 30px;
+        border: 4px solid #4f46e5;
+      }
 
-        .profile-pic {
-            display: block;
-            width: 200px;
-            height: 200px;
-            border-radius: 50%;
-            object-fit: cover;
-            margin: 0 auto 30px;
-            border: 4px solid #4f46e5;
-        }
+      .section-img {
+        display: block;
+        width: 100%;
+        max-width: 600px;
+        height: 380px;
+        margin: 20px auto;
+        border-radius: 8px;
+        object-fit: cover;
+      }
 
-        .section-img {
-            display: block;
-            width: 100%;
-            max-width: 600px;
-            height: 380px; 
-            margin: 20px auto;
-            border-radius: 8px;
-            object-fit: cover; 
-        }
+      .college-row {
+        display: flex;
+        justify-content: center;
+        gap: 15px;
+        margin: 30px 0;
+      }
 
-        .college-row {
-            display: flex;
-            justify-content: center;
-            gap: 15px;
-            margin: 30px 0;
-        }
+      .college-row img {
+        width: 100%;
+        height: 320px;
+        border-radius: 8px;
+        object-fit: cover;
+      }
 
-        .college-row img {
-            width: 100%;
-            height: 320px;
-            border-radius: 8px;
-            object-fit: cover;
-        }
+      .content p {
+        font-size: 14px;
+        line-height: 1.8;
+        text-align: justify;
+        text-indent: 2em;
+        color: #374151;
+      }
 
-        .content p {
-            font-size: 14px;
-            line-height: 1.8;
-            text-align: justify;
-            text-indent: 2em;
-            color: #374151;
-        }
+      sup {
+        font-size: 10px;
+        color: #4f46e5;
+        font-weight: bold;
+      }
 
-        sup {
-            font-size: 10px;
-            color: #4f46e5;
-            font-weight: bold;
-        }
+      .anchor-offset {
+        scroll-margin-top: 120px;
+      }
 
-        .anchor-offset {
-            scroll-margin-top: 120px;
-        }
+      .nav-section {
+        display: flex;
+        justify-content: center;
+        gap: 10px;
+        margin-top: 30px;
+      }
 
-        .nav-section {
-            display: flex;
-            justify-content: center;
-            gap: 10px;
-            margin-top: 30px;
-        }
+      .nav-section a {
+        padding: 10px 20px;
+        border-radius: 6px;
+        text-decoration: none;
+        font-weight: 800;
+        border: 2px solid #4f46e5;
+        color: #4f46e5;
+      }
 
-        .nav-section a {
-            padding: 10px 20px;
-            border-radius: 6px;
-            text-decoration: none;
-            font-weight: 800;
-            border: 2px solid #4f46e5;
-            color: #4f46e5;
-        }
-
-        footer {
-            background: #111827;
-            color: white;
-            text-align: center;
-            padding: 20px;
-        }
+      footer {
+        background: #111827;
+        color: white;
+        text-align: center;
+        padding: 20px;
+      }
     </style>
-</head>
-<body>
+  </head>
+  <body>
+    <nav>
+      <div class="nav-container">
+        <a href="index.html" class="nav-title">MyBlog</a>
+        <div class="nav-links">
+          <a href="index.html">Home</a>
+          <a href="biography.html" class="active">Biography</a>
+          <a href="blog1.html">Blog</a>
+          <a href="Gallery.html">Gallery</a>
+          <a href="Mybeats.html">My beats</a>
+        </div>
+      </div>
+    </nav>
 
-<nav>
-  <div class="nav-container">
-    <a href="index.html" class="nav-title">MyBlog</a>
-    <div class="nav-links">
-      <a href="index.html">Home</a>
-      <a href="biography.html" class="active">Biography</a>
-      <a href="blog1.html">Blog</a>
-      <a href="Gallery.html">Gallery</a>
-      <a href="Mybeats.html">My beats</a>
-    </div>
-  </div>
-</nav>
+    <section id="top">
+      <div class="content">
+        <br /><br /><br /><br /><br /><br /><br /><br />
+        <a href="images/neil2.jpg" target="Photo">
+          <img src="images/neil2.jpg" alt="Neil Almonte" class="profile-pic" />
+        </a>
 
-<section id="top">
-  <div class="content">
-    <a href="images/neil2.jpg" target="Photo">
-        <img src="images/neil2.jpg" alt="Neil Almonte" class="profile-pic">
-    </a>
-    
-    <h1>A Journey Raised by Love</h1>
-    <h2>By Neil Almonte</h2>
-    
-    <h2>
-      <a href="#childhood">Childhood</a> | 
-      <a href="#teenage">Teenage</a> | 
-      <a href="#college">College</a>
-    </h2>
+        <h1>A Journey Raised by Love</h1>
+        <h2>By Neil Almonte</h2>
 
-    <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
-    <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
-    <br><br><br><br><br><br><br><br>
+        <h2>
+          <a href="#childhood">Childhood</a> | <a href="#teenage">Teenage</a> |
+          <a href="#college">College</a>
+        </h2>
 
-    <h3 id="childhood" class="anchor-offset">Childhood</h3>
-    <a href="images/childhood.jpg" target="Photo">
-        <img src="images/childhood.jpg" alt="Childhood" class="section-img">
-    </a>
-    <p>
-        I was born in Caloocan City on December 2, 2003.<sup>1</sup>
-        My childhood was not easy because of the challenges my family faced.<sup>2</sup>
-        When I was only two years old, my parents separated due to personal problems.<sup>3</sup>
-        Because of that situation, my grandparents became the ones who raised me.<sup>4</sup>
-        They welcomed me with love even though life was difficult.<sup>5</sup>
-        I grew up in an environment where we didn’t have much, but we always had each other.<sup>6</sup>
-        My grandparents taught me the value of hard work.<sup>7</sup>
-        They also taught me the importance of kindness and respect.<sup>8</sup>
-        Life with them was simple but meaningful.<sup>9</sup>
-        We lived in Palanan, Isabela where my grandparents had settled.<sup>10</sup>
-        That town became my new home full of memories.<sup>11</sup>
-    </p>
+        <br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br />
+        <br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br />
+        <br /><br /><br /><br /><br /><br /><br /><br />
 
-    <div class="nav-section">
-        <a href="#top">Top</a>
-        <a href="#teenage">Next</a>
-    </div>
+        <h3 id="childhood" class="anchor-offset">Childhood</h3>
+        <a href="images/childhood.jpg" target="Photo">
+          <img src="images/childhood.jpg" alt="Childhood" class="section-img" />
+        </a>
+        <p>
+          I was born in Caloocan City on December 2, 2003.<sup>1</sup> My
+          childhood was not easy because of the challenges my family faced.<sup
+            >2</sup
+          >
+          When I was only two years old, my parents separated due to personal
+          problems.<sup>3</sup> Because of that situation, my grandparents
+          became the ones who raised me.<sup>4</sup> They welcomed me with love
+          even though life was difficult.<sup>5</sup> I grew up in an
+          environment where we didn’t have much, but we always had each
+          other.<sup>6</sup> My grandparents taught me the value of hard
+          work.<sup>7</sup> They also taught me the importance of kindness and
+          respect.<sup>8</sup> Life with them was simple but meaningful.<sup
+            >9</sup
+          >
+          We lived in Palanan, Isabela where my grandparents had settled.<sup
+            >10</sup
+          >
+          That town became my new home full of memories.<sup>11</sup>
+        </p>
 
-    <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
-    <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
-    <br><br><br><br><br><br><br><br>
+        <div class="nav-section">
+          <a href="#top">Top</a>
+          <a href="#teenage">Next</a>
+        </div>
 
-    <h3 id="teenage" class="anchor-offset">Teenage Years</h3>
-    <a href="images/teenage.jpg" target="Photo">
-        <img src="images/teenage.jpg" alt="Teenage years" class="section-img">
-    </a>
-    <p>
-        Then in my teenage years, I started to fall in love with computers.<sup>1</sup>
-        I became very curious about how computers worked and how everything inside them functioned.<sup>2</sup>
-        I would often wonder how programs were made and how technology kept improving.<sup>3</sup>
-        Pero dahil sa kahirapan ng buhay, hindi ko alam kung paano ako makakaangat.<sup>4</sup>
-        There were moments when I felt lost because of the challenges I faced.<sup>5</sup>
-        Sometimes I questioned if I would ever reach the dreams I had in mind.<sup>6</sup>
-        As a teenager, I carried a lot of questions about life.<sup>7</sup>
-        One of the biggest questions I had was about my mother.<sup>8</sup>
-    </p>
+        <br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br />
+        <br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br />
+        <br /><br /><br /><br /><br /><br /><br /><br />
 
-    <div class="nav-section">
-        <a href="#top">Top</a>
-        <a href="#childhood">Previous</a>
-        <a href="#college">Next</a>
-    </div>
+        <h3 id="teenage" class="anchor-offset">Teenage Years</h3>
+        <a href="images/teenage.jpg" target="Photo">
+          <img
+            src="images/teenage.jpg"
+            alt="Teenage years"
+            class="section-img"
+          />
+        </a>
+        <p>
+          Then in my teenage years, I started to fall in love with
+          computers.<sup>1</sup> I became very curious about how computers
+          worked and how everything inside them functioned.<sup>2</sup> I would
+          often wonder how programs were made and how technology kept
+          improving.<sup>3</sup> Pero dahil sa kahirapan ng buhay, hindi ko alam
+          kung paano ako makakaangat.<sup>4</sup> There were moments when I felt
+          lost because of the challenges I faced.<sup>5</sup> Sometimes I
+          questioned if I would ever reach the dreams I had in mind.<sup>6</sup>
+          As a teenager, I carried a lot of questions about life.<sup>7</sup>
+          One of the biggest questions I had was about my mother.<sup>8</sup>
+        </p>
 
-    <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
-    <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
-    <br><br><br><br><br><br><br><br>
+        <div class="nav-section">
+          <a href="#top">Top</a>
+          <a href="#childhood">Previous</a>
+          <a href="#college">Next</a>
+        </div>
 
-    <h3 id="college" class="anchor-offset">College Life</h3>
-    <div class="college-row">
-      <a href="images/college.jpg" target="Photo" style="width: 55%;">
-        <img src="images/college.jpg" alt="College 1">
-      </a>
-      <a href="images/COLLEGE2.jpg" target="Photo" style="width: 45%;">
-        <img src="images/COLLEGE2.jpg" alt="College 2">
-      </a>
-    </div>
-    <p>
-        In my college life, I experienced one of the most transformative moments of my journey.<sup>1</sup>
-        College opened my world in ways I never expected.<sup>2</sup>
-        Madami akong nakilala at halos bawat tao na nakasalamuha ko ay may sariling kwento.<sup>3</sup>
-        Most of the people I met had unique stories about their IT life.<sup>4</sup>
-        During my first year, everything felt chaotic because the environment was so new.<sup>5</sup>
-        It was hard for me to adjust at first.<sup>6</sup>
-        But even with the fear and uncertainty, I still tried my best.<sup>7</sup>
-        College became not just an education, but a journey of growth and purpose.<sup>8</sup>
-    </p>
+        <br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br />
+        <br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br />
+        <br /><br /><br /><br /><br /><br /><br /><br />
 
-    <div class="nav-section">
-        <a href="#top">Top</a>
-        <a href="#teenage">Previous</a>
-    </div>
+        <h3 id="college" class="anchor-offset">College Life</h3>
+        <div class="college-row">
+          <a href="images/college.jpg" target="Photo" style="width: 55%">
+            <img src="images/college.jpg" alt="College 1" />
+          </a>
+          <a href="images/COLLEGE2.jpg" target="Photo" style="width: 45%">
+            <img src="images/COLLEGE2.jpg" alt="College 2" />
+          </a>
+        </div>
+        <p>
+          In my college life, I experienced one of the most transformative
+          moments of my journey.<sup>1</sup> College opened my world in ways I
+          never expected.<sup>2</sup> Madami akong nakilala at halos bawat tao
+          na nakasalamuha ko ay may sariling kwento.<sup>3</sup> Most of the
+          people I met had unique stories about their IT life.<sup>4</sup>
+          During my first year, everything felt chaotic because the environment
+          was so new.<sup>5</sup> It was hard for me to adjust at first.<sup
+            >6</sup
+          >
+          But even with the fear and uncertainty, I still tried my best.<sup
+            >7</sup
+          >
+          College became not just an education, but a journey of growth and
+          purpose.<sup>8</sup>
+        </p>
 
-  </div>
-</section>
+        <div class="nav-section">
+          <a href="#top">Top</a>
+          <a href="#teenage">Previous</a>
+        </div>
+      </div>
+    </section>
 
-<footer>
-  <p>© <span id="year"></span> Neil Almonte | Biography</p>
-</footer>
+    <footer>
+      <p>© <span id="year"></span> Neil Almonte | Biography</p>
+    </footer>
 
-<script>
-document.getElementById("year").textContent = new Date().getFullYear();
-</script>
-
-</body>
+    <script>
+      document.getElementById("year").textContent = new Date().getFullYear();
+    </script>
+  </body>
 </html>
