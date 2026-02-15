@@ -1,218 +1,241 @@
 <!doctype html>
 <html lang="en">
-<head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>Now Playing | My Beats</title>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Now Playing | My Beats</title>
 
-<style>
-body {
-  margin: 0;
-  background: #0f172a;
-  color: white;
-  font-family: "Segoe UI", sans-serif;
-  min-height: 100vh;
-  padding: 80px 0;
-}
+    <style>
+      body {
+        margin: 0;
+        background: #0f172a;
+        color: white;
+        font-family: "Segoe UI", sans-serif;
+        min-height: 100vh;
+        padding: 80px 0;
+        overflow-y: hidden;
+      }
 
+      .column-wrapper {
+        display: flex;
+        flex-direction: column;
+        gap: 60px;
+        align-items: center;
+      }
 
-.column-wrapper{
-  display: flex;
-  flex-direction: column;
-  gap: 60px;
-  align-items: center;
-}
+      .player-wrapper {
+        text-align: center;
+        background: rgba(255, 255, 255, 0.05);
+        padding: 50px;
+        border-radius: 40px;
+        backdrop-filter: blur(10px);
+        border: 1px solid rgba(255, 255, 255, 0.1);
+        box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+      }
+      .player-wrapper {
+        scroll-margin-top: 150px;
+      }
 
+      .record-container {
+        position: relative;
+        width: 250px;
+        height: 250px;
+        margin: 0 auto 30px;
+      }
 
-.player-wrapper {
-  text-align: center;
-  background: rgba(255, 255, 255, 0.05);
-  padding: 50px;
-  border-radius: 40px;
-  backdrop-filter: blur(10px);
-  border: 1px solid rgba(255, 255, 255, 0.1);
-  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
-}
+      .record-container img {
+        width: 100%;
+        height: 100%;
+        border-radius: 50%;
+        object-fit: cover;
+        border: 10px solid #111827;
+        box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+      }
 
+      h2 {
+        font-family: Georgia, serif;
+        font-size: 28px;
+        margin: 10px 0;
+      }
 
-.record-container {
-  position: relative;
-  width: 250px;
-  height: 250px;
-  margin: 0 auto 30px;
-}
+      p {
+        color: #818cf8;
+        text-transform: uppercase;
+        letter-spacing: 2px;
+        font-size: 14px;
+        margin-bottom: 30px;
+      }
 
-.album-disk {
-  width: 100%;
-  height: 100%;
-  border-radius: 50%;
-  background-size: cover;
-  background-position: center;
-  border: 10px solid #111827;
-  box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
-  animation: spin 10s linear infinite;
-}
+      audio {
+        width: 100%;
+        filter: invert(1) hue-rotate(180deg) brightness(1.5);
+      }
 
+      .controls-info {
+        margin-top: 20px;
+        font-size: 12px;
+        color: #64748b;
+      }
 
-.record-container::after {
-  content: "";
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  width: 40px;
-  height: 40px;
-  background: #0f172a;
-  border-radius: 50%;
-  border: 5px solid #111827;
-}
+      .back-link {
+        display: inline-block;
+        margin-top: 30px;
+        color: #4f46e5;
+        text-decoration: none;
+        font-weight: bold;
+        font-size: 14px;
+      }
 
-/* SPIN 
-@keyframes spin {
-  from { transform: rotate(0deg); }
-  to { transform: rotate(360deg); }
-}*/
+      .back-link:hover {
+        color: #818cf8;
+      }
+    </style>
+  </head>
 
-h2 {
-  font-family: Georgia, serif;
-  font-size: 28px;
-  margin: 10px 0;
-}
+  <body>
+    <div class="column-wrapper">
+      <!-- 1 -->
+      <div class="player-wrapper" id="always">
+        <div class="record-container">
+          <img src="GIFS/danielvinyl.gif" alt="Spinning Disc" />
+        </div>
+        <h2>Always</h2>
+        <p>Daniel Caesar</p>
+        <audio controls>
+          <source src="mybeats/always.m4a" type="audio/mpeg" />
+        </audio>
+        <div class="controls-info">NEVER ENOUGH</div>
+        <a href="artist-detail.html" class="back-link">← Back to Album</a>
+      </div>
 
-p {
-  color: #818cf8;
-  text-transform: uppercase;
-  letter-spacing: 2px;
-  font-size: 14px;
-  margin-bottom: 30px;
-}
-
-audio {
-  width: 100%;
-  filter: invert(1) hue-rotate(180deg) brightness(1.5);
-}
-
-.controls-info {
-  margin-top: 20px;
-  font-size: 12px;
-  color: #64748b;
-}
-
-.back-link {
-  display: inline-block;
-  margin-top: 30px;
-  color: #4f46e5;
-  text-decoration: none;
-  font-weight: bold;
-  font-size: 14px;
-}
-</style>
-</head>
-
-<body>
-
-<div class="column-wrapper">
-
-<!-- 1 -->
-<div class="player-wrapper">
-  <div class="record-container">
-    <div class="album-disk" style="background-image:url('images/album1.jpg')"></div>
-  </div>
-  <h2>First Person Shooter</h2>
-  <p>Drake ft. J. Cole</p>
-  <audio controls><source src="audio/1.mp3" type="audio/mpeg"></audio>
-  <div class="controls-info">For All The Dogs</div>
-</div>
-
-<!-- 2 -->
-<div class="player-wrapper">
-  <div class="record-container">
-    <div class="album-disk" style="background-image:url('images/album2.jpg')"></div>
-  </div>
-  <h2>Rich Flex</h2>
-  <p>Drake & 21 Savage</p>
-  <audio controls><source src="audio/2.mp3" type="audio/mpeg"></audio>
-  <div class="controls-info">Her Loss</div>
-</div>
-
-<!-- 3 -->
-<div class="player-wrapper">
-  <div class="record-container">
-    <div class="album-disk" style="background-image:url('images/album3.jpg')"></div>
-  </div>
-  <h2>Way 2 Sexy</h2>
-  <p>Drake ft. Future</p>
-  <audio controls><source src="audio/3.mp3" type="audio/mpeg"></audio>
-  <div class="controls-info">Certified Lover Boy</div>
-</div>
-
-<!-- 4 -->
-<div class="player-wrapper">
-  <div class="record-container">
-    <div class="album-disk" style="background-image:url('images/album4.jpg')"></div>
-  </div>
-  <h2>God's Plan</h2>
-  <p>Drake</p>
-  <audio controls><source src="audio/4.mp3" type="audio/mpeg"></audio>
-  <div class="controls-info">Scorpion</div>
-</div>
-
-<!-- 5 -->
-<div class="player-wrapper">
-  <div class="record-container">
-    <div class="album-disk" style="background-image:url('images/album5.jpg')"></div>
-  </div>
-  <h2>One Dance</h2>
-  <p>Drake</p>
-  <audio controls><source src="audio/5.mp3" type="audio/mpeg"></audio>
-  <div class="controls-info">Views</div>
-</div>
-
-<!-- 6 -->
-<div class="player-wrapper">
-  <div class="record-container">
-    <div class="album-disk" style="background-image:url('images/album6.jpg')"></div>
-  </div>
-  <h2>In My Feelings</h2>
-  <p>Drake</p>
-  <audio controls><source src="audio/6.mp3" type="audio/mpeg"></audio>
-  <div class="controls-info">Scorpion</div>
-</div>
-
-<!-- 7 -->
-<div class="player-wrapper">
-  <div class="record-container">
-    <div class="album-disk" style="background-image:url('images/album7.jpg')"></div>
-  </div>
-  <h2>Nonstop</h2>
-  <p>Drake</p>
-  <audio controls><source src="audio/7.mp3" type="audio/mpeg"></audio>
-  <div class="controls-info">Scorpion</div>
-</div>
-
-<!-- 8 -->
-<div class="player-wrapper">
-  <div class="record-container">
-    <div class="album-disk" style="background-image:url('images/album8.jpg')"></div>
-  </div>
-  <h2>Started From The Bottom</h2>
-  <p>Drake</p>
-  <audio controls><source src="audio/8.mp3" type="audio/mpeg"></audio>
-  <div class="controls-info">Nothing Was The Same</div>
-</div>
-
-<!-- 9 -->
-<div class="player-wrapper">
-  <div class="record-container">
-    <div class="album-disk" style="background-image:url('images/album9.jpg')"></div>
-  </div>
-  <h2>Hotline Bling</h2>
-  <p>Drake</p>
-  <audio controls><source src="audio/9.mp3" type="audio/mpeg"></audio>
-  <div class="controls-info">Views</div>
-</div>
-
-</div>
-
-</body>
+      <br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br />
+      <br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br />
+      <br /><br />
+      <!-- 2 -->
+      <div id="pink" class="player-wrapper">
+        <div class="record-container">
+          <img src="GIFS/frankvinyl.gif" alt="Spinning Disc" />
+        </div>
+        <h2>Pink + White</h2>
+        <p>Frank Ocean</p>
+        <audio controls>
+          <source src="mybeats/pink+white.m4a" type="audio/mpeg" />
+        </audio>
+        <div class="controls-info">Blonde</div>
+        <a href="artist-detail.html" class="back-link">← Back to Album</a>
+      </div>
+      <br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br />
+      <br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br />
+      <br /><br />
+      <!-- 3 -->
+      <div id="red" class="player-wrapper">
+        <div class="record-container">
+          <img src="GIFS/redvinyl.gif" alt="Spinning Disc" />
+        </div>
+        <h2>Redbone</h2>
+        <p>Childish Gambino</p>
+        <audio controls>
+          <source src="mybeats/redbone.mp3" type="audio/mpeg" />
+        </audio>
+        <div class="controls-info">Awaken, My Love!</div>
+        <a href="artist-detail.html" class="back-link">← Back to Album</a>
+      </div>
+      <br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br />
+      <br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br />
+      <br /><br />
+      <!-- 4 -->
+      <div id="pluto" class="player-wrapper">
+        <div class="record-container">
+          <img src="GIFS/plutovinyl.gif" alt="Spinning Disc" />
+        </div>
+        <h2>Pluto Projector</h2>
+        <p>Rex Orange County</p>
+        <audio controls>
+          <source src="mybeats/plutoproject.m4a" type="audio/mpeg" />
+        </audio>
+        <div class="controls-info">Pony</div>
+        <a href="artist-detail.html" class="back-link">← Back to Album</a>
+      </div>
+      <br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br />
+      <br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br />
+      <br /><br />
+      <!-- 5 -->
+      <div id="lovers" class="player-wrapper">
+        <div class="record-container">
+          <img src="GIFS/loversvinyl.gif" alt="Spinning Disc" />
+        </div>
+        <h2>Lovers Rock</h2>
+        <p>TV Girl</p>
+        <audio controls>
+          <source src="mybeats/Loversrock.mp3" type="audio/mpeg" />
+        </audio>
+        <div class="controls-info">French Exit</div>
+        <a href="artist-detail.html" class="back-link">← Back to Album</a>
+      </div>
+      <br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br />
+      <br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br />
+      <br /><br />
+      <!-- 6 -->
+      <div id="bags" class="player-wrapper">
+        <div class="record-container">
+          <img src="GIFS/bagsvinyl.gif" alt="Spinning Disc" />
+        </div>
+        <h2>Bags</h2>
+        <p>Clairo</p>
+        <audio controls>
+          <source src="mybeats/bags.mp3" type="audio/mpeg" />
+        </audio>
+        <div class="controls-info">Immunity</div>
+        <a href="artist-detail.html" class="back-link">← Back to Album</a>
+      </div>
+      <br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br />
+      <br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br />
+      <br /><br />
+      <!-- 7 -->
+      <div id="sicko" class="player-wrapper">
+        <div class="record-container">
+          <img src="GIFS/sickomodevinyl.gif" alt="Spinning Disc" />
+        </div>
+        <h2>SICKO MODE</h2>
+        <p>Travis Scott</p>
+        <audio controls>
+          <source src="mybeats/sickomode.mp3" type="audio/mpeg" />
+        </audio>
+        <div class="controls-info">ASTROWORLD</div>
+        <a href="artist-detail.html" class="back-link">← Back to Album</a>
+      </div>
+      <br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br />
+      <br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br />
+      <br /><br />
+      <!-- 8 -->
+      <div id="alright" class="player-wrapper">
+        <div class="record-container">
+          <img src="GIFS/alrightvinyl.gif" alt="Spinning Disc" />
+        </div>
+        <h2>Alright</h2>
+        <p>Kendrick Lamar</p>
+        <audio controls>
+          <source src="mybeats/alright.m4a" type="audio/mpeg" />
+        </audio>
+        <div class="controls-info">To Pimp a Butterfly</div>
+        <a href="artist-detail.html" class="back-link">← Back to Album</a>
+      </div>
+      <br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br />
+      <br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br />
+      <br /><br />
+      <!-- 9 -->
+      <div id="911" class="player-wrapper">
+        <div class="record-container">
+          <img src="GIFS/sickovinyl.gif" alt="Spinning Disc" />
+        </div>
+        <h2>90210</h2>
+        <p>Travis Scott</p>
+        <audio controls>
+          <source src="mybeats/90210.mp3" type="audio/mpeg" />
+        </audio>
+        <div class="controls-info">Rodeo</div>
+        <a href="artist-detail.html" class="back-link">← Back to Album</a>
+      </div>
+    </div>
+  </body>
 </html>
