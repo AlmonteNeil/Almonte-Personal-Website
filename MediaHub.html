@@ -1,0 +1,231 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>My Media Hub | Neil Almonte</title>
+
+    <style>
+      body {
+        margin: 0;
+        font-family: Arial, Helvetica, sans-serif;
+        background-color: #f9fafb;
+        color: #111827;
+      }
+
+      nav {
+        position: fixed;
+        top: 0;
+        width: 100%;
+        background: #ffffff;
+        border-bottom: 1px solid #ddd;
+        z-index: 1000;
+      }
+            h1 {
+        font-family: Georgia, serif;
+        font-size: 42px;
+        margin-bottom: 10px;
+        color: #111827;
+      }
+
+      h1 span {
+        color: #4f46e5;
+      }
+
+      .nav-container {
+        max-width: 1100px;
+        margin: auto;
+        padding: 15px 20px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+            .section-content h1 {
+        font-size: 42px;
+        font-weight: bold;
+      }
+
+      .section-content h1 span {
+        color: #4f46e5;
+      }
+
+      .nav-title {
+        font-size: 22px;
+        font-weight: 800;
+        color: #4f46e5;
+        text-decoration: none;
+        letter-spacing: 1px;
+        border-bottom: 2px solid transparent;
+      }
+
+      .nav-title:hover {
+        border-bottom: 2px solid #4f46e5;
+        color: #6a63fa;
+        transition-duration: 0.2s;
+      }
+
+    .nav-links a {
+      margin-left: 22px;
+      text-decoration: none;
+      color: #0f172a;
+      font-weight: bold;
+      position: relative;
+    }
+
+    .nav-links a::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      bottom: -6px;
+      width: 0;
+      height: 2px;
+      background: #4f46e5;
+      transition: 0.3s;
+    }
+
+    .nav-links a:hover::after {
+      width: 100%;
+    }
+      section {
+        padding-top: 140px;
+        padding-bottom: 100px;
+        text-align: center;
+      }
+
+      .section-banner {
+        width: 100%;
+        height: 250px;
+        background-image: url("images/banner.jpg");
+        background-size: cover;
+        background-position: center;
+      }
+
+      .section-content {
+        position: relative;
+        max-width: 900px;
+        margin: -100px auto 0 auto;
+        background-color: #ffffff;
+        border-radius: 20px;
+        box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+        padding: 40px 30px;
+      }
+
+      .section-content h1 {
+        font-size: 38px;
+        margin-bottom: 10px;
+      }
+
+      .section-content p {
+        color: #6b7280;
+        font-size: 18px;
+      }
+
+      .media-buttons {
+        margin-top: 40px;
+      }
+
+      .media-buttons a {
+        display: inline-block;
+        margin: 15px;
+        padding: 16px 28px;
+        text-decoration: none;
+        border-radius: 8px;
+        font-weight: bold;
+        font-size: 18px;
+        transition: 0.3s ease;
+      }
+
+      .go-back-btn {
+        position: absolute;
+        top: 20px;
+        left: 25px;
+        text-decoration: none;
+
+        color: #4f46e5;
+        padding: 8px 14px;
+
+        font-size: 12px;
+        font-weight: bold;
+        transition: 0.2s ease;
+        shadow: 0 5px 15px rgba(79, 70, 229, 0.3);
+      }
+
+      .go-back-btn:hover {
+        transform: translateY(-2px);
+      }
+
+      .btn-outline {
+        border: 2px solid #4f46e5;
+        color: #4f46e5;
+        background: white;
+      }
+
+      .btn-outline:hover {
+        background: #4f46e5;
+        color: white;
+      }
+
+      .btn-solid {
+        background: #4f46e5;
+        color: white;
+      }
+
+      .btn-solid:hover {
+        background: #4338ca;
+      }
+
+      footer {
+        background: #111827;
+        color: white;
+        text-align: center;
+        padding: 20px;
+        position: fixed;
+        bottom: 0;
+        width: 100%;
+      }
+    </style>
+  </head>
+
+  <body>
+    <nav>
+      <div class="nav-container">
+        <a href="index.html" class="nav-title">MyBlog</a>
+        <div class="nav-links">
+          <a href="index.html">Home</a>
+          <a href="biography.html">Biography</a>
+          <a href="blog1.html">Blog</a>
+          <a href="Gallery.html">Gallery</a>
+
+          <a href="MediaHub.html">Media Hub</a>
+        </div>
+      </div>
+    </nav>
+
+    <section>
+      <div class="section-banner"></div>
+
+      <div class="section-content">
+        <a href="index.html" class="go-back-btn">← Main Page</a>
+        <h1>Media <span>Page</span></h1>
+        <p>
+          This page contains all my favorite music, movies, and TV shows. Click
+          below to explore each category.
+        </p>
+
+        <div class="media-buttons">
+          <a href="Mybeats.html" class="btn-outline">My Beats</a>
+          <a href="MyFilmMovies.html" class="btn-outline">Movies</a>
+          <a href="MyFilmTVShows.html" class="btn-outline">TV Shows</a>
+        </div>
+      </div>
+    </section>
+
+    <footer>
+      <p>© <span id="year"></span> Neil Almonte | Media Hub</p>
+    </footer>
+
+    <script>
+      document.getElementById("year").textContent = new Date().getFullYear();
+    </script>
+  </body>
+</html>

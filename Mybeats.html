@@ -10,7 +10,7 @@
         font-family: Arial, Helvetica, sans-serif;
         background-color: #f9fafb;
         color: #111827;
-        scroll-behavior: smooth;
+        overflow-y: hidden;
       }
 
       nav {
@@ -73,9 +73,31 @@
         background: #ffffff;
         border-radius: 20px;
         box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
-        padding: 60px 40px;
+        padding: 10px 40px;
+        top: -100px;
         z-index: 1;
         text-align: center;
+      }
+
+      /* === GO BACK BUTTON === */
+      .go-back-btn {
+        position: absolute;
+        top: 20px;
+        left: 25px;
+        text-decoration: none;
+        
+        color: #4f46e5;
+        padding: 8px 14px;
+        
+        font-size: 12px;
+        font-weight: bold;
+        transition: 0.2s ease;
+        shadow: 0 5px 15px rgba(79, 70, 229, 0.3);
+      }
+
+      .go-back-btn:hover {
+        
+        transform: translateY(-2px);
       }
 
       h1 {
@@ -158,11 +180,6 @@
       <div class="nav-container">
         <a href="index.html" class="nav-title">MyBlog</a>
         <div class="nav-links">
-          <a href="index.html">Home</a>
-          <a href="biography.html">Biography</a>
-          <a href="blog1.html">Blog</a>
-          <a href="Gallery.html">Gallery</a>
-          <a href="Mybeats.html" class="active">My beats</a>
         </div>
       </div>
     </nav>
@@ -170,6 +187,10 @@
     <div class="section-banner"></div>
 
     <div class="content">
+
+      <!-- GO BACK BUTTON -->
+      <a href="MediaHub.html" class="go-back-btn">← Media Page</a>
+
       <h1>My <span>Beats</span></h1>
       <p class="subtitle">Select a genre to explore the vibe</p>
 
