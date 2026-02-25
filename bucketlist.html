@@ -1,0 +1,327 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Bucket List | Neil Almonte</title>
+
+    <style>
+      * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+      }
+
+      body {
+        font-family: Arial, Helvetica, sans-serif;
+        background: #f5f7fb;
+        color: #0f172a;
+        scroll-behavior: smooth;
+      }
+
+      nav {
+        position: fixed;
+        top: 0;
+        width: 100%;
+        background: rgba(255, 255, 255, 0.95);
+        backdrop-filter: blur(8px);
+        border-bottom: 1px solid #e5e7eb;
+        z-index: 1000;
+      }
+
+      .nav-container {
+        max-width: 1200px;
+        margin: auto;
+        padding: 16px 24px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+
+      .nav-title {
+        font-size: 22px;
+        font-weight: 800;
+        color: #4f46e5;
+        text-decoration: none;
+        letter-spacing: 1px;
+      }
+
+      .nav-links {
+        display: flex;
+        align-items: center;
+      }
+
+      .nav-links a,
+      .dropbtn {
+        margin-left: 22px;
+        text-decoration: none;
+        color: #0f172a;
+        font-weight: bold;
+        position: relative;
+        font-size: 16px;
+        background: none;
+        border: none;
+        cursor: pointer;
+      }
+
+      .dropdown {
+        position: relative;
+        display: inline-block;
+      }
+
+      .dropdown-content {
+        display: none;
+        position: absolute;
+        right: 0;
+        background-color: white;
+        min-width: 160px;
+        box-shadow: 0px 10px 25px rgba(0, 0, 0, 0.1);
+        border-radius: 8px;
+        overflow: hidden;
+        margin-top: 5px;
+        border: 1px solid #e5e7eb;
+        z-index: 10;
+      }
+
+      .dropdown:hover .dropdown-content {
+        display: block;
+      }
+
+      .dropdown-content a {
+        color: #0f172a;
+        padding: 12px 16px;
+        margin-left: 0;
+        display: block;
+        font-size: 14px;
+      }
+
+      .dropdown-content a:hover {
+        background-color: #f1f5ff;
+        color: #4f46e5;
+      }
+
+      .hero {
+        min-height: 100vh;
+        background: linear-gradient(135deg, #4f46e5, #6366f1);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding-top: 110px;
+        padding-bottom: 50px;
+      }
+
+      .hero-card {
+        background: white;
+        max-width: 1100px;
+        width: 90%;
+        border-radius: 24px;
+        box-shadow: 0 25px 60px rgba(0, 0, 0, 0.15);
+        padding: 60px;
+      }
+
+      .hero-card h1 {
+        font-size: 42px;
+        margin-bottom: 10px;
+        font-weight: 800;
+        text-align: center;
+      }
+
+      .hero-card h1 span {
+        color: #4f46e5;
+      }
+
+      .bucket-intro {
+        text-align: center;
+        color: #64748b;
+        margin-bottom: 40px;
+        font-size: 18px;
+      }
+
+      .bucket-item {
+        margin-bottom: 15px;
+        border: 1px solid #e5e7eb;
+        border-radius: 12px;
+        overflow: hidden;
+      }
+
+      .bucket-item details summary {
+        padding: 20px;
+        font-size: 20px;
+        font-weight: bold;
+        background: #f8fafc;
+        cursor: pointer;
+        list-style: none;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+
+      .bucket-item details summary::after {
+        content: "▾";
+        color: #4f46e5;
+      }
+
+      .bucket-list-content {
+        padding: 20px 60px;
+        background: white;
+      }
+
+      .bucket-list-content ul {
+        list-style-type: disc;
+      }
+
+      .bucket-list-content li {
+        padding: 8px 0;
+        color: #475569;
+        line-height: 1.6;
+      }
+
+      footer {
+        background: #0f172a;
+        color: white;
+        text-align: center;
+        padding: 25px;
+        font-size: 14px;
+      }
+    </style>
+  </head>
+  <body>
+    <nav>
+      <div class="nav-container">
+        <a href="index.html" class="nav-title">MyBlog</a>
+        <div class="nav-links">
+          <a href="index.html">Home</a>
+          <a href="biography.html">Biography</a>
+
+          <div class="dropdown">
+            <button class="dropbtn">Blogs ▾</button>
+            <div class="dropdown-content">
+              <a href="blog1.html">Blog 1</a>
+              <a href="blog2.html">Blog 2</a>
+              <a href="blog3.html">Blog 3</a>
+            </div>
+          </div>
+          <a href="Gallery.html">Gallery</a>
+          <a href="MediaHub.html">Media Hub</a>
+
+          <div class="dropdown">
+            <button class="dropbtn">Adventure ▾</button>
+            <div class="dropdown-content">
+              <a href="dreamplaces.html">Dream Places</a>
+              <a href="bucketlist.html">Bucket List</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </nav>
+
+    <section class="hero">
+      <div class="hero-card">
+        <h1>My Travel <span>Bucket List</span></h1>
+        <p class="bucket-intro">
+          Mga lugar na pangarap kong mapuntahan at ma-experience.
+        </p>
+
+        <div class="bucket-item">
+          <details>
+            <summary>Japan 🇯🇵</summary>
+            <div class="bucket-list-content">
+              <ul>
+                <li>
+                  <strong>Mt. Fuji:</strong> Makita ang iconic beauty ng
+                  pinakasikat na bundok.
+                </li>
+                <li>
+                  <strong>Tokyo City Life:</strong> Ma-experience ang fast-paced
+                  life at advanced technology.
+                </li>
+                <li>
+                  <strong>Cherry Blossoms (Sakura):</strong> Mag-Hanami sa
+                  ilalim ng mga pink petals.
+                </li>
+                <li>
+                  <strong>Traditional Shrines:</strong> Bisitahin ang mga sacred
+                  temples at torii gates.
+                </li>
+              </ul>
+            </div>
+          </details>
+        </div>
+
+        <div class="bucket-item">
+          <details>
+            <summary>France 🇫🇷</summary>
+            <div class="bucket-list-content">
+              <ul>
+                <li>
+                  <strong>The Eiffel Tower:</strong> Mapanoood ang sparkling
+                  lights ng "Iron Lady" sa gabi.
+                </li>
+                <li>
+                  <strong>The Seine River:</strong> Mag-cruise sa ilog at dumaan
+                  sa mga historic bridges.
+                </li>
+                <li>
+                  <strong>Les Invalides:</strong> Makita ang golden dome at ang
+                  tomb ni Napoleon.
+                </li>
+              </ul>
+            </div>
+          </details>
+        </div>
+
+        <div class="bucket-item">
+          <details>
+            <summary>Germany 🇩🇪</summary>
+            <div class="bucket-list-content">
+              <ul>
+                <li>
+                  <strong>Neues Rathaus:</strong> Mapanoood ang Glockenspiel
+                  performance sa Munich.
+                </li>
+                <li>
+                  <strong>Marienplatz:</strong> Mamasyal sa puso ng Bavarian
+                  culture.
+                </li>
+                <li>
+                  <strong>Mariensäule:</strong> Bisitahin ang makasaysayang
+                  Mary's Column.
+                </li>
+              </ul>
+            </div>
+          </details>
+        </div>
+
+        <div class="bucket-item">
+          <details>
+            <summary>Switzerland 🇨🇭</summary>
+            <div class="bucket-list-content">
+              <ul>
+                <li>
+                  <strong>The Matterhorn:</strong> Masilayan ang sikat na
+                  pyramid-shaped mountain.
+                </li>
+                <li>
+                  <strong>Zermatt Village:</strong> Ma-feel ang cozy vibe ng
+                  car-free alpine resort.
+                </li>
+                <li>
+                  <strong>Swiss Alps:</strong> Mag-hiking o mag-ski sa
+                  snow-capped mountain ranges.
+                </li>
+              </ul>
+            </div>
+          </details>
+        </div>
+      </div>
+    </section>
+
+    <footer>
+      <p>© <span id="year"></span> Neil Almonte | Personal Website</p>
+    </footer>
+
+    <script>
+      document.getElementById("year").textContent = new Date().getFullYear();
+    </script>
+  </body>
+</html>

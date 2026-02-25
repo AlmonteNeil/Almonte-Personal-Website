@@ -1,63 +1,129 @@
 <!doctype html>
 <html>
-<head>
-<title>Switzerland | Dream Place</title>
+  <head>
+    <title>Switzerland | Dream Place</title>
 
-<style>
-body {
-  font-family: Arial;
-  background: #f9fafb;
-  margin: 0;
-  text-align: center;
-  padding: 100px 20px;
-  position: relative;
-}
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        background: #f3f4f6;
+        margin: 0;
+        padding: 60px 20px;
+        color: #1f2937;
+        line-height: 1.6;
+      }
 
-.go-back-btn {
+      .container {
+        max-width: 1000px;
+        margin: 0 auto;
+        background: white;
+        padding: 80px 60px 60px 60px;
+        border-radius: 24px;
+        box-shadow: 0 10px 25px rgba(0, 0, 0, 0.05);
+        text-align: center;
+        position: relative;
+      }
+
+      .go-back-btn {
         position: absolute;
-        top: 20px;
-        left: 25px;
+        top: 30px;
+        left: 30px;
         text-decoration: none;
-
         color: #4f46e5;
-        padding: 8px 14px;
-
-        
         font-weight: bold;
-        transition: 0.2s ease;
-        shadow: 0 5px 15px rgba(79, 70, 229, 0.3);
+        font-size: 13px;
+        transition: 0.3s ease;
+        border: 1px solid #e5e7eb;
+        padding: 8px 16px;
+        background: #f9fafb;
+        border-radius: 8px;
       }
 
       .go-back-btn:hover {
-        transform: translateY(-2px);
+        background: #4f46e5;
+        color: white;
+        transform: translateX(-3px);
+        box-shadow: 0 4px 12px rgba(79, 70, 229, 0.15);
       }
 
-h1 {
-  color: #4f46e5;
-}
+      h1 {
+        color: #111827;
+        font-size: 2.8rem;
+        margin: 10px 0 20px 0;
+        letter-spacing: -1px;
+      }
 
-img {
-  width: 400px;
-  border-radius: 15px;
-  margin-top: 20px;
-}
-</style>
+      p {
+        max-width: 750px;
+        margin: 0 auto 40px auto;
+        font-size: 1.1rem;
+        color: #4b5563;
+      }
 
-</head>
-<body>
+      .image-wrapper {
+        border-radius: 15px;
+        overflow: hidden;
+        line-height: 0;
+        box-shadow: 0 15px 35px rgba(0, 0, 0, 0.12);
+      }
 
-<!-- BACK BUTTON -->
-<a href="dreamplaces.html" class="go-back-btn">← Back</a>
+      img {
+        width: 100%;
+        height: auto;
+        display: block;
+      }
 
-<h1>Japan 🇯🇵</h1>
+      area {
+        outline: none;
+      }
+    </style>
+  </head>
 
-<p>
-I want to visit Japan because of its advanced technology, beautiful
-cherry blossoms, and rich culture. I want to experience Tokyo's city life,
-anime culture, and traditional temples in Kyoto.
-</p>
+  <body>
+    <div class="container">
+      <a href="../dreamplaces.html" class="go-back-btn">← Back</a>
 
-<img src="images/japan.jpg" alt="Japan">
+      <h1>Switzerland 🇨🇭</h1>
 
-</body>
+      <p>
+        I want to visit Switzerland because of its breathtaking
+        <b>Alpine scenery</b>, crystal-clear lakes, and charming mountain
+        villages. I want to experience the majestic peak of the Matterhorn, the
+        serene beauty of Zermatt, and the world-renowned Swiss hospitality in
+        the heart of the mountains.
+      </p>
+
+      <div class="image-wrapper">
+        <img
+          src="../images/places/switzerland.jpg"
+          usemap="#switzerland"
+          alt="Switzerland"
+        />
+      </div>
+
+      <map name="switzerland">
+        <area
+          shape="poly"
+          coords="286,204,298,207,326,205,337,194,344,196,356,177,382,156,386,136,397,130,402,111,413,113,430,127,439,146,441,153,447,160,460,167,485,180,474,198,458,218,438,226,402,229,382,237,330,231,305,229"
+          href="../Descriptionplaces/switzerland-details.html#matterhorn"
+          alt="The Matterhorn"
+          title="The Matterhorn"
+        />
+        <area
+          shape="poly"
+          coords="4,358,109,353,131,361,227,386,284,374,341,356,390,358,456,350,523,358,606,353,684,365,724,398,801,417,912,430,988,437,995,375,992,300,885,258,614,270,514,255,418,245,361,269,332,250,260,240,163,254,115,269,52,262,4,230,4,233"
+          href="../Descriptionplaces/switzerland-details.html#alps"
+          alt="The Swiss Alps"
+          title="The Swiss Alps"
+        />
+        <area
+          shape="poly"
+          href="../Descriptionplaces/switzerland-details.html#village"
+          coords="8,363,44,363,82,372,122,383,173,390,208,383,236,390,290,377,321,369,350,368,401,365,454,365,523,369,585,374,658,379,681,401,720,402,749,421,792,435,850,448,933,465,984,469,985,485,910,481,717,465,632,519,604,517,518,548,390,515,270,543,283,460,240,418,86,412,6,453"
+          alt="Zermatt Village"
+          title="Zermatt Village"
+        />
+      </map>
+    </div>
+  </body>
 </html>

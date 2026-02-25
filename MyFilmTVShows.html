@@ -1,283 +1,352 @@
 <!doctype html>
 <html lang="en">
-<head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>My Favorite TV Shows</title>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>My Favorite TV Shows</title>
 
-<style>
-body {
-  margin: 0;
-  font-family: Arial, Helvetica, sans-serif;
-  background-color: #f9fafb;
-  color: #111827;
-}
+    <style>
+      body {
+        margin: 0;
+        font-family: Arial, Helvetica, sans-serif;
+        background-color: #f9fafb;
+        color: #111827;
+      }
 
-/* NAVBAR */
-nav {
-  position: fixed;
-  top: 0;
-  width: 100%;
-  background: #ffffff;
-  border-bottom: 1px solid #ddd;
-  z-index: 1000;
-}
+      nav {
+        position: fixed;
+        top: 0;
+        width: 100%;
+        background: #ffffff;
+        border-bottom: 1px solid #ddd;
+        z-index: 1000;
+      }
 
-.nav-container {
-  max-width: 1200px;
-  margin: auto;
-  padding: 15px 20px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
+      .nav-container {
+        max-width: 1200px;
+        margin: auto;
+        padding: 15px 20px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
 
-.nav-title {
-  font-size: 22px;
-  font-weight: 800;
-  color: #4f46e5;
-}
+      .nav-title {
+        font-size: 22px;
+        font-weight: 800;
+        color: #4f46e5;
+        text-decoration: none;
+      }
 
-.nav-links a {
-  margin-left: 22px;
-  text-decoration: none;
-  color: #0f172a;
-  font-weight: bold;
-  position: relative;
-}
+      .nav-links {
+        display: flex;
+        align-items: center;
+      }
 
-.nav-links a::after {
-  content: "";
-  position: absolute;
-  left: 0;
-  bottom: -6px;
-  width: 0;
-  height: 2px;
-  background: #4f46e5;
-  transition: 0.3s;
-}
+      .nav-links a,
+      .dropbtn {
+        margin-left: 22px;
+        text-decoration: none;
+        color: #0f172a;
+        font-weight: bold;
+        position: relative;
+        background: none;
+        border: none;
+        font-family: inherit;
+        font-size: 16px;
+        cursor: pointer;
+      }
 
-.nav-links a:hover::after {
-  width: 100%;
-}
+      .nav-links a::after {
+        content: "";
+        position: absolute;
+        left: 0;
+        bottom: -6px;
+        width: 0;
+        height: 2px;
+        background: #4f46e5;
+        transition: 0.3s;
+      }
 
-/* SECTION */
-section {
-  padding: 140px 20px 80px;
-  text-align: center;
-}
+      .nav-links a:hover::after {
+        width: 100%;
+      }
 
-section h1 {
-  font-size: 42px;
-  margin-bottom: 10px;
-}
+      .dropdown {
+        position: relative;
+        display: inline-block;
+      }
 
-section p.subtitle {
-  color: #6b7280;
-  margin-bottom: 50px;
-}
+      .dropdown-content {
+        display: none;
+        position: absolute;
+        right: 0;
+        background-color: white;
+        min-width: 160px;
+        box-shadow: 0px 10px 25px rgba(0, 0, 0, 0.1);
+        border-radius: 8px;
+        overflow: hidden;
+        margin-top: 5px;
+        border: 1px solid #e5e7eb;
+        z-index: 1001;
+      }
 
-/* GENRE NAV */
-.genre-nav {
-  margin-bottom: 50px;
-  text-align: center;
-}
+      .dropdown-content a {
+        color: #0f172a;
+        padding: 12px 16px;
+        margin-left: 0;
+        display: block;
+        font-size: 14px;
+        transition: 0.2s;
+        text-align: left;
+      }
 
-.genre-nav a {
-  text-decoration: none;
-  color: #4f46e5;
-  font-weight: bold;
-  margin: 0 18px;
-  padding-bottom: 4px;
-  border-bottom: 2px solid transparent;
-  transition: 0.3s;
-}
+      .dropdown-content a:hover {
+        background-color: #f1f5ff;
+        color: #4f46e5;
+      }
 
-.genre-nav a:hover {
-  border-bottom: 2px solid #4f46e5;
-  color: #6a63fa;
-}
+      .dropdown-content a::after {
+        display: none;
+      }
 
-/* GRID */
-.tv-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(330px, 1fr));
-  gap: 35px;
-  max-width: 1200px;
-  margin: auto;
-}
+      .dropdown:hover .dropdown-content {
+        display: block;
+      }
 
-/* CARD */
-.media-card {
-  background: white;
-  padding: 25px;
-  border-radius: 22px;
-  box-shadow: 0 12px 28px rgba(0,0,0,0.08);
-  text-align: left;
-  position: relative;
-  transition: 0.3s ease;
-}
+      section {
+        padding: 140px 20px 80px;
+        text-align: center;
+      }
 
-.media-card:hover {
-  transform: translateY(-8px);
-  box-shadow: 0 20px 45px rgba(79,70,229,0.15);
-}
+      section h1 {
+        font-size: 42px;
+        margin-bottom: 10px;
+      }
 
-.media-card h2 {
-  margin-top: 0;
-  color: #4f46e5;
-}
+      section p.subtitle {
+        color: #6b7280;
+        margin-bottom: 50px;
+      }
 
-.media-card p {
-  font-size: 14px;
-  margin: 6px 0;
-  color: #374151;
-}
+      .genre-nav {
+        margin-bottom: 50px;
+        text-align: center;
+      }
 
-/* SINGLE GO BACK BUTTON */
-.go-back-btn {
-  display: inline-block;
-  margin-bottom: 50px;
-  text-decoration: none;
-  color: #4f46e5;
-  font-weight: bold;
-  padding: 10px 18px;
-  border: 2px solid #4f46e5;
-  border-radius: 8px;
-  transition: 0.2s;
-}
+      .genre-nav a {
+        text-decoration: none;
+        color: #4f46e5;
+        font-weight: bold;
+        margin: 0 18px;
+        padding-bottom: 4px;
+        border-bottom: 2px solid transparent;
+        transition: 0.3s;
+      }
 
-.go-back-btn:hover {
-   background: #4f46e5;
-  color: white;
-}
-.genre-header {
-  text-align: left;
-  max-width: 1200px;
-  margin: 60px auto 20px;
-  font-size: 26px;
-  color: #4f46e5;
-  border-bottom: 2px solid #4f46e5;
-  padding-bottom: 6px;
-}
+      .genre-nav a:hover {
+        border-bottom: 2px solid #4f46e5;
+        color: #6a63fa;
+      }
 
-/* VIDEO */
-iframe {
-  width: 100%;
-  height: 260px;
-  border-radius: 12px;
-  border: none;
-  margin-top: 15px;
-}
+      .tv-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(330px, 1fr));
+        gap: 35px;
+        max-width: 1200px;
+        margin: auto;
+      }
 
-/* FOOTER */
-footer {
-  background: #111827;
-  color: white;
-  text-align: center;
-  padding: 25px;
-  margin-top: 80px;
-}
-</style>
-</head>
+      .media-card {
+        background: white;
+        padding: 25px;
+        border-radius: 22px;
+        box-shadow: 0 12px 28px rgba(0, 0, 0, 0.08);
+        text-align: left;
+        position: relative;
+        transition: 0.3s ease;
+      }
 
-<body>
+      .media-card:hover {
+        transform: translateY(-8px);
+        box-shadow: 0 20px 45px rgba(79, 70, 229, 0.15);
+      }
 
-<nav>
-  <div class="nav-container">
-    <span class="nav-title">MyBlog</span>
-    <div class="nav-links">
-      <a href="index.html">Home</a>
-      <a href="biography.html">Biography</a>
-      <a href="blog1.html">Blog</a>
-      <a href="Gallery.html">Gallery</a>
-      <a href="MediaHub.html">Media Hub</a>
-      <a href="dreamplaces.html">Dream Places</a>
-    </div>
-  </div>
-</nav>
+      .media-card h2 {
+        margin-top: 0;
+        color: #4f46e5;
+      }
 
-<section>
-  <h1>My Favorite TV Shows</h1>
-  <p class="subtitle">Top series I love watching</p>
+      .media-card p {
+        font-size: 14px;
+        margin: 6px 0;
+        color: #374151;
+      }
 
-  <!-- Single Go Back Button -->
-  <a href="MediaHub.html" class="go-back-btn">← Media Page</a>
+      .go-back-btn {
+        display: inline-block;
+        margin-bottom: 50px;
+        text-decoration: none;
+        color: #4f46e5;
+        font-weight: bold;
+        padding: 10px 18px;
+        border: 2px solid #4f46e5;
+        border-radius: 8px;
+        transition: 0.2s;
+      }
 
-  <!-- Genre Navigation -->
-  <div class="genre-nav">
-    <a href="#drama">Drama / Romance</a>
-    <a href="#action">Action / Sci-Fi</a>
-    <a href="#crime">Crime / Thriller</a>
-    <a href="#horror">Horror / Drama</a>
-  </div>
+      .go-back-btn:hover {
+        background: #4f46e5;
+        color: white;
+      }
+      .genre-header {
+        text-align: left;
+        max-width: 1200px;
+        margin: 60px auto 20px;
+        font-size: 26px;
+        color: #4f46e5;
+        border-bottom: 2px solid #4f46e5;
+        padding-bottom: 6px;
+      }
 
-  <!-- Drama / Romance Section -->
-   <h2  id="drama"></h2>
-   <div class="genre-header">Drama / Romance Section</div>
-  <div class="tv-grid">
-    <div class="media-card">
-      <h2>Teen Wolf</h2>
-      <p><strong>Genre:</strong> Drama / Romance</p>
-      <p><strong>Stars:</strong> Scott, Stiles</p>
-      <iframe src="https://www.youtube.com/embed/eXMjTXL2Vks" allowfullscreen></iframe>
-    </div>
-  </div>
+      iframe {
+        width: 100%;
+        height: 260px;
+        border-radius: 12px;
+        border: none;
+        margin-top: 15px;
+      }
 
-  <!-- Action / Sci-Fi Section -->
-   <h2   id="action"></h2>
-   <div class="genre-header">Action / Sci-Fi Section</div>
-  <div class="tv-grid">
-    <div class="media-card">
-      <h2>Stranger Things</h2>
-      <p><strong>Genre:</strong> Action / Sci-Fi</p>
-      <p><strong>Stars:</strong> Millie Bobby Brown, Finn Wolfhard</p>
-      <iframe src="https://www.youtube.com/embed/b9EkMc79ZSU" allowfullscreen></iframe>
-    </div>
-    <div class="media-card">
-      <h2>The Flash</h2>
-      <p><strong>Genre:</strong> Action / Sci-Fi</p>
-      <p><strong>Stars:</strong> Grant Gustin</p>
-      <iframe src="https://www.youtube.com/embed/Yj0l7iGKh8g" allowfullscreen></iframe>
-    </div>
-  </div>
+      footer {
+        background: #111827;
+        color: white;
+        text-align: center;
+        padding: 25px;
+        margin-top: 80px;
+      }
+    </style>
+  </head>
 
-  <!-- Crime / Thriller Section -->
-   <h2  id="crime"></h2>
-   <div class="genre-header">Crime / Thriller Section</div>
-  <div class="tv-grid">
-    <div class="media-card">
-      <h2>Money Heist</h2>
-      <p><strong>Genre:</strong> Crime / Thriller</p>
-      <p><strong>Stars:</strong> Úrsula Corberó, Álvaro Morte</p>
-      <iframe src="https://www.youtube.com/embed/_InqQJRqGW4" allowfullscreen></iframe>
-    </div>
-    <div class="media-card">
-      <h2>Breaking Bad</h2>
-      <p><strong>Genre:</strong> Crime / Drama</p>
-      <p><strong>Stars:</strong> Bryan Cranston, Aaron Paul</p>
-      <iframe src="https://www.youtube.com/embed/HhesaQXLuRY" allowfullscreen></iframe>
-    </div>
-  </div>
+  <body>
+    <nav>
+      <div class="nav-container">
+        <a href="index.html" class="nav-title">MyBlog</a>
+        <div class="nav-links">
+          <a href="index.html">Home</a>
+          <a href="biography.html">Biography</a>
 
-  <!-- Horror / Drama Section -->
-   <h2 id="horror"></h2>
-   <div class="genre-header">Horror / Drama Section</div>
-  <div class="tv-grid">
-    <div class="media-card">
-      <h2>The Walking Dead</h2>
-      <p><strong>Genre:</strong> Horror / Drama</p>
-      <p><strong>Stars:</strong> Andrew Lincoln</p>
-      <iframe src="https://www.youtube.com/embed/sfAc2U20uyg" allowfullscreen></iframe>
-      
-    </div>
-  </div>
+          <div class="dropdown">
+            <button class="dropbtn">Blogs ▾</button>
+            <div class="dropdown-content">
+              <a href="blog1.html">Blog 1</a>
+              <a href="blog2.html">Blog 2</a>
+              <a href="blog3.html">Blog 3</a>
+            </div>
+          </div>
+          <a href="Gallery.html">Gallery</a>
+          <a href="MediaHub.html">Media Hub</a>
 
-</section>
+          <div class="dropdown">
+            <button class="dropbtn">Adventure ▾</button>
+            <div class="dropdown-content">
+              <a href="dreamplaces.html">Dream Places</a>
+              <a href="bucketlist.html">Bucket List</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </nav>
 
-<footer>
-  <p>© 2026 Neil Almonte | TV Shows Page</p>
-</footer>
+    <section>
+      <h1>My Favorite TV Shows</h1>
+      <p class="subtitle">Top series I love watching</p>
 
-</body>
+      <a href="MediaHub.html" class="go-back-btn">← Media Page</a>
+
+      <div class="genre-nav">
+        <a href="#drama">Drama / Romance</a>
+        <a href="#action">Action / Sci-Fi</a>
+        <a href="#crime">Crime / Thriller</a>
+        <a href="#horror">Horror / Drama</a>
+      </div>
+
+      <h2 id="drama"></h2>
+      <div class="genre-header">Drama / Romance Section</div>
+      <div class="tv-grid">
+        <div class="media-card">
+          <h2>Teen Wolf</h2>
+          <p><strong>Genre:</strong> Drama / Romance</p>
+          <p><strong>Stars:</strong> Scott, Stiles</p>
+          <iframe
+            src="https://www.youtube.com/embed/eXMjTXL2Vks"
+            allowfullscreen
+          ></iframe>
+        </div>
+      </div>
+
+      <h2 id="action"></h2>
+      <div class="genre-header">Action / Sci-Fi Section</div>
+      <div class="tv-grid">
+        <div class="media-card">
+          <h2>Stranger Things</h2>
+          <p><strong>Genre:</strong> Action / Sci-Fi</p>
+          <p><strong>Stars:</strong> Millie Bobby Brown, Finn Wolfhard</p>
+          <iframe
+            src="https://www.youtube.com/embed/b9EkMc79ZSU"
+            allowfullscreen
+          ></iframe>
+        </div>
+        <div class="media-card">
+          <h2>The Flash</h2>
+          <p><strong>Genre:</strong> Action / Sci-Fi</p>
+          <p><strong>Stars:</strong> Grant Gustin</p>
+          <iframe
+            src="https://www.youtube.com/embed/Yj0l7iGKh8g"
+            allowfullscreen
+          ></iframe>
+        </div>
+      </div>
+
+      <h2 id="crime"></h2>
+      <div class="genre-header">Crime / Thriller Section</div>
+      <div class="tv-grid">
+        <div class="media-card">
+          <h2>Money Heist</h2>
+          <p><strong>Genre:</strong> Crime / Thriller</p>
+          <p><strong>Stars:</strong> Úrsula Corberó, Álvaro Morte</p>
+          <iframe
+            src="https://www.youtube.com/embed/_InqQJRqGW4"
+            allowfullscreen
+          ></iframe>
+        </div>
+        <div class="media-card">
+          <h2>Breaking Bad</h2>
+          <p><strong>Genre:</strong> Crime / Drama</p>
+          <p><strong>Stars:</strong> Bryan Cranston, Aaron Paul</p>
+          <iframe
+            src="https://www.youtube.com/embed/HhesaQXLuRY"
+            allowfullscreen
+          ></iframe>
+        </div>
+      </div>
+
+      <h2 id="horror"></h2>
+      <div class="genre-header">Horror / Drama Section</div>
+      <div class="tv-grid">
+        <div class="media-card">
+          <h2>The Walking Dead</h2>
+          <p><strong>Genre:</strong> Horror / Drama</p>
+          <p><strong>Stars:</strong> Andrew Lincoln</p>
+          <iframe
+            src="https://www.youtube.com/embed/sfAc2U20uyg"
+            allowfullscreen
+          ></iframe>
+        </div>
+      </div>
+    </section>
+
+    <footer>
+      <p>© 2026 Neil Almonte | TV Shows Page</p>
+    </footer>
+  </body>
 </html>

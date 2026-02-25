@@ -1,63 +1,127 @@
 <!doctype html>
 <html>
-<head>
-<title>France | Dream Place</title>
+  <head>
+    <title>France | Dream Place</title>
 
-<style>
-body {
-  font-family: Arial;
-  background: #f9fafb;
-  margin: 0;
-  text-align: center;
-  padding: 100px 20px;
-  position: relative;
-}
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        background: #f3f4f6;
+        margin: 0;
+        padding: 60px 20px;
+        color: #1f2937;
+        line-height: 1.6;
+      }
 
-.go-back-btn {
+      .container {
+        max-width: 1000px;
+        margin: 0 auto;
+        background: white;
+        padding: 80px 60px 60px 60px;
+        border-radius: 24px;
+        box-shadow: 0 10px 25px rgba(0, 0, 0, 0.05);
+        text-align: center;
+        position: relative;
+      }
+
+      .go-back-btn {
         position: absolute;
-        top: 20px;
-        left: 25px;
+        top: 30px;
+        left: 30px;
         text-decoration: none;
-
         color: #4f46e5;
-        padding: 8px 14px;
-
-        
         font-weight: bold;
-        transition: 0.2s ease;
-        shadow: 0 5px 15px rgba(79, 70, 229, 0.3);
+        font-size: 13px;
+        transition: 0.3s ease;
+        border: 1px solid #e5e7eb;
+        padding: 8px 16px;
+        background: #f9fafb;
+        border-radius: 8px;
       }
 
       .go-back-btn:hover {
-        transform: translateY(-2px);
+        background: #4f46e5;
+        color: white;
+        transform: translateX(-3px);
+        box-shadow: 0 4px 12px rgba(79, 70, 229, 0.15);
       }
 
-h1 {
-  color: #4f46e5;
-}
+      h1 {
+        color: #111827;
+        font-size: 2.8rem;
+        margin: 10px 0 20px 0;
+        letter-spacing: -1px;
+      }
 
-img {
-  width: 400px;
-  border-radius: 15px;
-  margin-top: 20px;
-}
-</style>
+      p {
+        max-width: 750px;
+        margin: 0 auto 40px auto;
+        font-size: 1.1rem;
+        color: #4b5563;
+      }
 
-</head>
-<body>
+      .image-wrapper {
+        border-radius: 15px;
+        overflow: hidden;
+        line-height: 0;
+        box-shadow: 0 15px 35px rgba(0, 0, 0, 0.12);
+      }
 
-<!-- BACK BUTTON -->
-<a href="dreamplaces.html" class="go-back-btn">← Back</a>
+      img {
+        width: 100%;
+        height: auto;
+        display: block;
+      }
 
-<h1>Japan 🇯🇵</h1>
+      area {
+        outline: none;
+      }
+    </style>
+  </head>
 
-<p>
-I want to visit Japan because of its advanced technology, beautiful
-cherry blossoms, and rich culture. I want to experience Tokyo's city life,
-anime culture, and traditional temples in Kyoto.
-</p>
+  <body>
+    <div class="container">
+      <a href="../dreamplaces.html" class="go-back-btn">← Back</a>
 
-<img src="images/japan.jpg" alt="Japan">
+      <h1>France 🇫🇷</h1>
 
-</body>
+      <p>
+        I want to visit Paris because of its iconic
+        <b>Haussmann architecture</b>, world-famous landmarks, and romantic
+        riverside charm. I want to experience the view of the Eiffel Tower, the
+        historic stone bridges over the Seine River, and the golden dome of Les
+        Invalides.
+      </p>
+
+      <div class="image-wrapper">
+        <img src="../images/places/france.jpg" usemap="#france" alt="france" />
+      </div>
+
+      <map name="france">
+        <area
+          shape="poly"
+          coords="597,244,612,212,618,169,621,121,624,104,628,121,629,167,636,209,649,243,624,249"
+          href="../Descriptionplaces/france-details.html#eiffel"
+          alt="The Eiffel Tower"
+          title="The Eiffel Tower"
+        />
+
+        <area
+          shape="poly"
+          coords="598,664,719,577,769,559,781,570,778,581,787,586,797,584,808,578,844,567,866,559,890,565,900,588,907,596,922,595,935,590,956,584,967,603,924,640,890,664,717,666"
+          href="../Descriptionplaces/france-details.html#river"
+          alt="The Seine River"
+          title="The Seine River"
+        />
+
+        <area
+          shape="poly"
+          href="../Descriptionplaces/france-details.html#invalides"
+          coords="460,257,477,255,479,231,484,223,490,204,494,227,499,245,500,260,472,263"
+          alt="Les Invalides"
+          title="Les Invalides"
+        />
+      </map>
+    </div>
+  </body>
 </html>

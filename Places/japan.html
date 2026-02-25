@@ -1,63 +1,123 @@
 <!doctype html>
 <html>
-<head>
-<title>Japan | Dream Place</title>
+  <head>
+    <title>Japan | Dream Place</title>
 
-<style>
-body {
-  font-family: Arial;
-  background: #f9fafb;
-  margin: 0;
-  text-align: center;
-  padding: 100px 20px;
-  position: relative;
-}
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        background: #f3f4f6;
+        margin: 0;
+        padding: 60px 20px;
+        color: #1f2937;
+        line-height: 1.6;
+      }
 
-.go-back-btn {
+      .container {
+        max-width: 1000px;
+        margin: 0 auto;
+        background: white;
+        padding: 80px 60px 60px 60px;
+        border-radius: 24px;
+        box-shadow: 0 10px 25px rgba(0, 0, 0, 0.05);
+        text-align: center;
+        position: relative;
+      }
+
+      .go-back-btn {
         position: absolute;
-        top: 20px;
-        left: 25px;
+        top: 30px;
+        left: 30px;
         text-decoration: none;
-
         color: #4f46e5;
-        padding: 8px 14px;
-
-        
         font-weight: bold;
-        transition: 0.2s ease;
-        shadow: 0 5px 15px rgba(79, 70, 229, 0.3);
+        font-size: 13px;
+        transition: 0.3s ease;
+        border: 1px solid #e5e7eb;
+        padding: 8px 16px;
+        background: #f9fafb;
+        border-radius: 8px;
       }
 
       .go-back-btn:hover {
-        transform: translateY(-2px);
+        background: #4f46e5;
+        color: white;
+        transform: translateX(-3px);
+        box-shadow: 0 4px 12px rgba(79, 70, 229, 0.15);
       }
 
-h1 {
-  color: #4f46e5;
-}
+      h1 {
+        color: #111827;
+        font-size: 2.8rem;
+        margin: 10px 0 20px 0;
+        letter-spacing: -1px;
+      }
 
-img {
-  width: 400px;
-  border-radius: 15px;
-  margin-top: 20px;
-}
-</style>
+      p {
+        max-width: 750px;
+        margin: 0 auto 40px auto;
+        font-size: 1.1rem;
+        color: #4b5563;
+      }
 
-</head>
-<body>
+      .image-wrapper {
+        border-radius: 15px;
+        overflow: hidden;
+        line-height: 0;
+        box-shadow: 0 15px 35px rgba(0, 0, 0, 0.12);
+      }
 
-<!-- BACK BUTTON -->
-<a href="../dreamplaces.html" class="go-back-btn">← Back</a>
+      img {
+        width: 100%;
+        height: auto;
+        display: block;
+      }
 
-<h1>Japan 🇯🇵</h1>
+      area {
+        outline: none;
+      }
+    </style>
+  </head>
 
-<p>
-I want to visit Japan because of its advanced technology, beautiful
-cherry blossoms, and rich culture. I want to experience Tokyo's city life,
-anime culture, and traditional temples in Kyoto.
-</p>
+  <body>
+    <div class="container">
+      <a href="../dreamplaces.html" class="go-back-btn">← Back</a>
 
-<img src="images/japan.jpg" alt="Japan">
+      <h1>Japan 🇯🇵</h1>
 
-</body>
+      <p>
+        I want to visit Japan because of its <b>advanced technology</b>,
+        beautiful cherry blossoms, and rich culture. I want to experience
+        Tokyo's city life, anime culture, and traditional temples in Kyoto.
+      </p>
+
+      <div class="image-wrapper">
+        <img src="../images/places/japan.jpg" usemap="#japan" alt="Japan" />
+      </div>
+
+      <map name="japan">
+        <area
+          shape="poly"
+          coords="15,378,74,376,150,366,215,354,272,337,335,306,360,304,400,332,434,346,478,363,515,369,524,381,526,401,514,418,133,415,36,407"
+          href="../Descriptionplaces/japan-details.html#fuji"
+          alt="Mount Fuji"
+          title="Mount Fuji"
+        />
+        <area
+          shape="poly"
+          href="../Descriptionplaces/japan-details.html#shrine"
+          coords="983,608,987,599,974,592,988,584,992,575,830,537,828,510,800,510,797,490,950,485,954,475,941,470,955,461,958,455,815,433,815,412,783,409,781,384,922,375,928,364,914,364,930,348,807,336,803,317,775,316,777,309,903,274,910,266,898,264,912,247,730,236,723,224,710,223,707,215,710,87,709,55,702,43,705,24,697,14,691,36,688,49,689,74,684,203,689,215,671,233,622,226,607,254,569,282,535,289,540,310,622,313,627,324,601,330,603,345,526,363,536,375,526,382,528,387,578,382,617,386,620,408,593,413,598,427,513,443,514,458,516,465,596,479,605,491,583,498,583,510,580,517,548,522,493,522,496,540,557,580,611,604,559,610,561,605,576,594,586,624,585,644,580,657,578,669,580,677,570,692,567,704,574,706,585,725,582,732,586,746,577,757,583,759,591,762,594,781,595,773,599,802,599,844,604,846,849,611,602"
+          alt="Shrine"
+          title="Shrine"
+        />
+        <area
+          shape="poly"
+          coords="0,435,26,429,67,433,91,436,102,450,131,455,155,460,195,455,216,445,244,451,282,458,312,452,335,458,340,469,363,475,393,478,420,483,458,494,470,518,480,540,496,552,509,561,511,570,456,559,461,565,485,579,527,587,553,583,577,590,591,599,627,603,657,587,688,583,710,598,735,593,759,600,768,607,789,615,807,604,811,580,807,552,616,665,0,665,0,652"
+          href="../Descriptionplaces/japan-details.html#blossom"
+          alt="Blossom"
+          title="Blossom"
+        />
+      </map>
+    </div>
+  </body>
 </html>

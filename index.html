@@ -1,308 +1,321 @@
 <!doctype html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Neil Almonte | Personal Website</title>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Neil Almonte | Personal Website</title>
 
-  <style>
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-    }
-
-    body {
-      font-family: Arial, Helvetica, sans-serif;
-      background: #f5f7fb;
-      color: #0f172a;
-      scroll-behavior: smooth;
-    }
-
-   
-    nav {
-      position: fixed;
-      top: 0;
-      width: 100%;
-      background: rgba(255,255,255,0.95);
-      backdrop-filter: blur(8px);
-      border-bottom: 1px solid #e5e7eb;
-      z-index: 1000;
-    }
-
-    .nav-container {
-      max-width: 1200px;
-      margin: auto;
-      padding: 16px 24px;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-    }
-
-    .nav-title {
-      font-size: 22px;
-      font-weight: 800;
-      color: #4f46e5;
-      text-decoration: none;
-      letter-spacing: 1px;
-      border-bottom: 2px solid transparent;
-    }
-          .nav-title:hover {
-        border-bottom: 2px solid #4f46e5;
-        color: #6a63fa;
-        transition-duration: 0.2s;
+    <style>
+      * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
       }
 
-    .nav-links a {
-      margin-left: 22px;
-      text-decoration: none;
-      color: #0f172a;
-      font-weight: bold;
-      position: relative;
-    }
+      body {
+        font-family: Arial, Helvetica, sans-serif;
+        background: #f5f7fb;
+        color: #0f172a;
+        scroll-behavior: smooth;
+      }
 
-    .nav-links a::after {
-      content: "";
-      position: absolute;
-      left: 0;
-      bottom: -6px;
-      width: 0;
-      height: 2px;
-      background: #4f46e5;
-      transition: 0.3s;
-    }
+      nav {
+        position: fixed;
+        top: 0;
+        width: 100%;
+        background: rgba(255, 255, 255, 0.95);
+        backdrop-filter: blur(8px);
+        border-bottom: 1px solid #e5e7eb;
+        z-index: 1000;
+      }
 
-    .nav-links a:hover::after {
-      width: 100%;
-    }
+      .nav-container {
+        max-width: 1200px;
+        margin: auto;
+        padding: 16px 24px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
 
+      .nav-title {
+        font-size: 22px;
+        font-weight: 800;
+        color: #4f46e5;
+        text-decoration: none;
+        letter-spacing: 1px;
+      }
 
-    .hero {
-      min-height: 100vh;
-      background: linear-gradient(135deg, #4f46e5, #6366f1);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      padding-top: 90px;
-    }
+      .nav-links {
+        display: flex;
+        align-items: center;
+      }
 
-    .hero-card {
-      background: white;
-      max-width: 1100px;
-      width: 90%;
-      border-radius: 24px;
-      display: grid;
-      grid-template-columns: 1fr 1.2fr;
-      box-shadow: 0 25px 60px rgba(0,0,0,0.15);
-      overflow: hidden;
-    }
+      .nav-links a,
+      .dropbtn {
+        margin-left: 22px;
+        text-decoration: none;
+        color: #0f172a;
+        font-weight: bold;
+        position: relative;
+        font-size: 16px;
+        background: none;
+        border: none;
+        cursor: pointer;
+        font-family: inherit;
+      }
 
-    .hero-left {
-      background: linear-gradient(180deg, #eef2ff, #ffffff);
-      padding: 60px 40px;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      text-align: center;
-    }
+      .nav-links a::after {
+        content: "";
+        position: absolute;
+        left: 0;
+        bottom: -6px;
+        width: 0;
+        height: 2px;
+        background: #4f46e5;
+        transition: 0.3s;
+      }
 
-    .profile-pic {
-      width: 180px;
-      height: 180px;
-      border-radius: 50%;
-      object-fit: cover;
-      border: 5px solid #4f46e5;
-      margin-bottom: 20px;
-    }
+      .nav-links a:hover::after {
+        width: 100%;
+      }
 
-    .hero-left h2 {
-      font-size: 26px;
-      font-weight: 800;
-    }
+      .dropdown {
+        position: relative;
+        display: inline-block;
+      }
 
-    .hero-left span {
-      color: #4f46e5;
-    }
+      .dropdown-content {
+        display: block;
+        visibility: hidden;
+        position: absolute;
+        right: 0;
+        background-color: white;
+        min-width: 160px;
+        box-shadow: 0px 10px 25px rgba(0, 0, 0, 0.1);
+        border-radius: 8px;
+        overflow: hidden;
+        margin-top: 5px;
+        border: 1px solid #e5e7eb;
+        opacity: 0;
+        transform: translateY(10px);
+        transition: all 0.3s ease;
+      }
 
-    .hero-left p {
-      font-size: 15px;
-      color: #64748b;
-      margin-top: 10px;
-    }
+      .dropdown:hover .dropdown-content {
+        visibility: visible;
+        opacity: 1;
+        transform: translateY(0);
+      }
 
-    
-    .hero-right {
-      padding: 70px 60px;
-    }
+      .dropdown-content a {
+        color: #0f172a;
+        padding: 12px 16px;
+        margin-left: 0 !important;
+        display: block;
+        font-size: 14px;
+      }
 
-    .hero-right h1 {
-      font-size: 42px;
-      line-height: 1.2;
-      margin-bottom: 20px;
-      font-weight: 800;
-    }
+      .dropdown-content a:hover {
+        background-color: #f1f5ff;
+        color: #4f46e5;
+      }
 
-    .hero-right h1 span {
-      color: #4f46e5;
-    }
+      .dropdown-content a::after {
+        display: none;
+      }
 
-    .hero-right p {
-      color: #475569;
-      font-size: 17px;
-      margin-bottom: 30px;
-      line-height: 1.7;
-    }
+      .hero {
+        min-height: 100vh;
+        background: linear-gradient(135deg, #4f46e5, #6366f1);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding-top: 90px;
+        padding-bottom: 40px;
+      }
 
-    .btn-group {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 12px;
-      margin-bottom: 35px;
-    }
+      .hero-card {
+        background: white;
+        max-width: 1100px;
+        width: 90%;
+        border-radius: 24px;
+        display: grid;
+        grid-template-columns: 1fr 1.2fr;
+        box-shadow: 0 25px 60px rgba(0, 0, 0, 0.15);
+        overflow: hidden;
+      }
 
-    .btn {
-      padding: 12px 22px;
-      border-radius: 8px;
-      font-weight: bold;
-      text-decoration: none;
-      font-size: 14px;
-      transition: 0.3s;
-      display: inline-block;
-    }
+      .hero-left {
+        background: linear-gradient(180deg, #eef2ff, #ffffff);
+        padding: 60px 40px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+      }
 
-    .btn-primary {
-      background: #4f46e5;
-      color: white;
-    }
+      .profile-pic {
+        width: 180px;
+        height: 180px;
+        border-radius: 50%;
+        object-fit: cover;
+        border: 5px solid #4f46e5;
+        margin-bottom: 20px;
+      }
 
-    .btn-primary:hover {
-      background: #4338ca;
-      transform: translateY(-2px);
-    }
+      .hero-right {
+        padding: 70px 60px;
+      }
 
-    .btn-outline {
-      border: 2px solid #4f46e5;
-      color: #4f46e5;
-      background: transparent;
-    }
+      .hero-right h1 {
+        font-size: 42px;
+        line-height: 1.2;
+        margin-bottom: 20px;
+        font-weight: 800;
+      }
 
-    .btn-outline:hover {
-      background: #4f46e5;
-      color: white;
-      transform: translateY(-2px);
-    }
+      .hero-right h1 span,
+      .hero-left h2 span {
+        color: #4f46e5;
+      }
 
-    .video-box {
-      margin-top: 30px;
-      background: #f8fafc;
-      padding: 25px;
-      border-radius: 16px;
-      box-shadow: inset 0 0 0 1px #e5e7eb;
-    }
+      .btn-group {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 12px;
+        margin-bottom: 35px;
+      }
 
-    .video-box h3 {
-      margin-bottom: 10px;
-      font-weight: 800;
-    }
+      .btn {
+        padding: 12px 22px;
+        border-radius: 8px;
+        font-weight: bold;
+        text-decoration: none;
+        font-size: 14px;
+        transition: 0.3s;
+        display: inline-block;
+      }
 
-    video {
-      width: 100%;
-      border-radius: 12px;
-      margin-top: 10px;
-    }
+      .btn-primary {
+        background: #4f46e5;
+        color: white;
+      }
+      .btn-outline {
+        border: 2px solid #4f46e5;
+        color: #4f46e5;
+      }
 
-    .contact {
-      margin-top: 35px;
-      padding-top: 20px;
-      border-top: 1px solid #e5e7eb;
-    }
+      .video-box {
+        margin-top: 30px;
+        background: #f8fafc;
+        padding: 25px;
+        border-radius: 16px;
+        border: 1px solid #e5e7eb;
+      }
 
-    .contact a {
-      color: #4f46e5;
-      font-weight: bold;
-      text-decoration: none;
-    }
+      video {
+        width: 100%;
+        border-radius: 12px;
+        margin-top: 10px;
+      }
 
-    footer {
-      background: #0f172a;
-      color: white;
-      text-align: center;
-      padding: 25px;
-      font-size: 14px;
-    }
+      footer {
+        background: #0f172a;
+        color: white;
+        text-align: center;
+        padding: 25px;
+      }
+    </style>
+  </head>
 
+  <body>
+    <nav>
+      <div class="nav-container">
+        <a href="index.html" class="nav-title">MyBlog</a>
+        <div class="nav-links">
+          <a href="index.html">Home</a>
+          <a href="biography.html">Biography</a>
 
-  </style>
-</head>
+          <div class="dropdown">
+            <button class="dropbtn">Blogs ▾</button>
+            <div class="dropdown-content">
+              <a href="blog1.html">Blog 1</a>
+              <a href="blog2.html">Blog 2</a>
+              <a href="blog3.html">Blog 3</a>
+            </div>
+          </div>
+          <a href="Gallery.html">Gallery</a>
+          <a href="MediaHub.html">Media Hub</a>
 
-<body>
-
-<nav>
-  <div class="nav-container">
-    <span class="nav-title">MyBlog</span>
-    <div class="nav-links">
-      <a href="index.html">Home</a>
-      <a href="biography.html">Biography</a>
-      <a href="blog1.html">Blog</a>
-      <a href="Gallery.html">Gallery</a>
-      <a href="MediaHub.html">Media Hub</a>
-      <a href="dreamplaces.html">Dream Places</a>
-    </div>
-  </div>
-</nav>
-
-<section class="hero">
-  <div class="hero-card">
-
-    <div class="hero-left">
-      <img src="images/neil3.jpg" alt="Neil Almonte" class="profile-pic">
-      <h2>Neil <span>Almonte</span></h2>
-      <p><a href="biography.html" class="btn btn-outline">About Me</a></p>
-      
-    </div>
-
-    <div class="hero-right">
-      <h1>Welcome to my <span>Digital Space</span></h1>
-
-      <p>
-        This website contains my biography and personal blogs about technology, football,
-        and my journey as a student-athlete. A space where passion, creativity, and growth meet.
-      </p>
-
-      <div class="btn-group">
-        <a href="dreamplaces.html" class="btn btn-outline">Dream Places</a>
-        <a href="blog1.html" class="btn btn-primary">Tech Blog</a>
-        <a href="blog2.html" class="btn btn-primary">Football Journey</a>
-        <a href="blog3.html" class="btn btn-primary">Student Athlete</a>
-        <a href="Gallery.html" class="btn btn-outline">Gallery</a>
-        <a href="MediaHub.html" class="btn btn-outline">Media Hub</a>
+          <div class="dropdown">
+            <button class="dropbtn">Adventure ▾</button>
+            <div class="dropdown-content">
+              <a href="dreamplaces.html">Dream Places</a>
+              <a href="bucketlist.html">Bucket List</a>
+            </div>
+          </div>
+        </div>
       </div>
+    </nav>
 
-      <div class="video-box">
-        <h3>Video Presentation</h3>
-        <p style="color:#64748b;">A glimpse into my work</p>
-        <video poster="images/neil3(1).jpg" controls>
-          <source src="video/vlog.mp4" type="video/mp4" />
-        </video>
+    <section class="hero">
+      <div class="hero-card">
+        <div class="hero-left">
+          <img src="images/neil3.jpg" alt="Neil Almonte" class="profile-pic" />
+          <h2>Neil <span>Almonte</span></h2>
+          <p style="margin-top: 15px">
+            <a href="biography.html" class="btn btn-outline">About Me</a>
+          </p>
+        </div>
+
+        <div class="hero-right">
+          <h1>Welcome to my <span>Digital Space</span></h1>
+          <p>
+            This website contains my biography and personal blogs about
+            technology, football, and my journey as a student-athlete. A space
+            where passion, creativity, and growth meet.
+          </p>
+
+          <div class="btn-group">
+            <a href="dreamplaces.html" class="btn btn-outline">Dream Places</a>
+            <a href="blog1.html" class="btn btn-primary">Tech Blog</a>
+            <a href="blog2.html" class="btn btn-primary">Football Journey</a>
+            <a href="blog3.html" class="btn btn-primary">Student Athlete</a>
+            <a href="Gallery.html" class="btn btn-outline">Gallery</a>
+            <a href="MediaHub.html" class="btn btn-outline">Media Hub</a>
+          </div>
+
+          <div class="video-box">
+            <h3>Video Presentation</h3>
+            <p style="color: #64748b">A glimpse into my work</p>
+            <video poster="images/neil3(1).jpg" controls>
+              <source src="video/vlog.mp4" type="video/mp4" />
+            </video>
+          </div>
+
+          <div class="contact">
+            <h3 style="margin-top: 20px">Contact Me</h3>
+            <p>
+              Email:
+              <a
+                href="mailto:almonte.neil@ue.edu.ph"
+                style="color: #4f46e5; font-weight: bold; text-decoration: none"
+                >almonte.neil@ue.edu.ph</a
+              >
+            </p>
+          </div>
+        </div>
       </div>
+    </section>
 
-      <div class="contact">
-        <h3>Contact Me</h3>
-        <p>Email: <a href="mailto:almonte.neil@ue.edu.ph">almonte.neil@ue.edu.ph</a></p>
-      </div>
-    </div>
+    <footer>
+      <p>© <span id="year"></span> Neil Almonte | Personal Website</p>
+    </footer>
 
-  </div>
-</section>
-
-<footer>
-  <p>© <span id="year"></span> Neil Almonte | Personal Website</p>
-</footer>
-
-<script>
-  document.getElementById("year").textContent = new Date().getFullYear();
-</script>
-
-</body>
+    <script>
+      document.getElementById("year").textContent = new Date().getFullYear();
+    </script>
+  </body>
 </html>

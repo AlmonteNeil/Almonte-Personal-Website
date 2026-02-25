@@ -47,18 +47,29 @@
         letter-spacing: 1px;
         border-bottom: 2px solid transparent;
       }
-            .nav-title:hover {
+      .nav-title:hover {
         border-bottom: 2px solid #4f46e5;
         color: #6a63fa;
         transition-duration: 0.2s;
       }
 
-      .nav-links a {
+      .nav-links {
+        display: flex;
+        align-items: center;
+      }
+
+      .nav-links a,
+      .dropbtn {
         margin-left: 22px;
         text-decoration: none;
         color: #0f172a;
         font-weight: bold;
         position: relative;
+        background: none;
+        border: none;
+        font-family: inherit;
+        font-size: 16px;
+        cursor: pointer;
       }
 
       .nav-links a::after {
@@ -76,7 +87,47 @@
         width: 100%;
       }
 
-      
+      .dropdown {
+        position: relative;
+        display: inline-block;
+      }
+
+      .dropdown-content {
+        display: none;
+        position: absolute;
+        right: 0;
+        background-color: white;
+        min-width: 160px;
+        box-shadow: 0px 10px 25px rgba(0, 0, 0, 0.1);
+        border-radius: 8px;
+        overflow: hidden;
+        margin-top: 5px;
+        border: 1px solid #e5e7eb;
+        z-index: 1001;
+      }
+
+      .dropdown-content a {
+        color: #0f172a;
+        padding: 12px 16px;
+        margin-left: 0;
+        display: block;
+        font-size: 14px;
+        transition: 0.2s;
+      }
+
+      .dropdown-content a:hover {
+        background-color: #f1f5ff;
+        color: #4f46e5;
+      }
+
+      .dropdown-content a::after {
+        display: none;
+      }
+
+      .dropdown:hover .dropdown-content {
+        display: block;
+      }
+
       .bio-hero {
         padding-top: 120px;
         padding-bottom: 60px;
@@ -224,15 +275,29 @@
         <div class="nav-links">
           <a href="index.html">Home</a>
           <a href="biography.html">Biography</a>
-          <a href="blog1.html">Blog</a>
+
+          <div class="dropdown">
+            <button class="dropbtn">Blogs ▾</button>
+            <div class="dropdown-content">
+              <a href="blog1.html">Blog 1</a>
+              <a href="blog2.html">Blog 2</a>
+              <a href="blog3.html">Blog 3</a>
+            </div>
+          </div>
           <a href="Gallery.html">Gallery</a>
           <a href="MediaHub.html">Media Hub</a>
-          <a href="dreamplaces.html">Dream Places</a>
+
+          <div class="dropdown">
+            <button class="dropbtn">Adventure ▾</button>
+            <div class="dropdown-content">
+              <a href="dreamplaces.html">Dream Places</a>
+              <a href="bucketlist.html">Bucket List</a>
+            </div>
+          </div>
         </div>
       </div>
     </nav>
 
-   
     <div class="bio-hero" id="top">
       <a href="images/neil2.jpg" target="Photo">
         <img src="images/neil2.jpg" alt="Neil Almonte" />
@@ -251,7 +316,6 @@
         <br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br />
         <br /><br /><br /><br /><br /><br /><br /><br /><br /><br />
 
-        
         <h2 id="childhood"></h2>
         <div class="story-section">
           <h3>Childhood</h3>
@@ -297,7 +361,6 @@
         <br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br />
         <br /><br /><br /><br /><br /><br /><br /><br /><br /><br />
 
-        
         <h2 id="teenage"></h2>
         <div class="story-section">
           <h3>Teenage Years</h3>
@@ -350,7 +413,6 @@
         <br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br />
         <br /><br /><br /><br /><br /><br /><br /><br /><br /><br />
 
-        
         <h2 id="college"></h2>
         <div class="story-section">
           <h3>College Life</h3>
@@ -395,6 +457,7 @@
           <div class="nav-section">
             <a href="#top" class="btn-outline">Top</a>
             <a href="#teenage" class="btn-outline">Previous</a>
+            <a href="index.html" class="btn-outline">Home</a>
           </div>
         </div>
       </div>

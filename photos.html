@@ -7,21 +7,26 @@
     <style>
       body {
         margin: 0;
-        font-family: Tahoma, sans-serif;
+        font-family: "Segoe UI", Tahoma, sans-serif;
         background: #f3f4f6;
         scroll-behavior: smooth;
+        color: #111827;
       }
 
       .container {
         max-width: 1200px;
-        margin: 40px auto;
-        padding: 20px;
+        margin: 0 auto;
+        padding: 40px 20px;
       }
 
       .back-nav {
-        margin-bottom: 40px;
-        
-        
+        margin-bottom: 20px;
+        padding: 15px 0;
+        position: sticky;
+        top: 0;
+        background: rgba(243, 244, 246, 0.95);
+        z-index: 1000;
+        border-bottom: 1px solid #e5e7eb;
       }
 
       .back-nav a {
@@ -31,20 +36,22 @@
         font-size: 18px;
       }
 
+      section {
+        margin-bottom: 80px;
+      }
+
       .category-header {
         font-family: Georgia, serif;
         font-size: 28px;
-        color: #111827;
         border-bottom: 3px solid #4f46e5;
         padding-bottom: 10px;
-        margin-top: 60px;
+        margin-bottom: 25px;
       }
 
       .photo-grid {
         display: grid;
-        grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
-        gap: 15px;
-        margin-top: 20px;
+        grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+        gap: 20px;
       }
 
       .photo-link {
@@ -54,206 +61,429 @@
       }
 
       .photo-link:hover {
-        transform: scale(1.02);
+        transform: translateY(-5px);
       }
 
       .photo-wrapper {
         background: #fff;
-        padding: 8px;
-        border-radius: 10px;
+        padding: 10px;
+        border-radius: 12px;
         box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
       }
 
       .photo-wrapper img {
         width: 100%;
-        height: 200px;
+        height: 180px;
         object-fit: cover;
-        border-radius: 6px;
+        border-radius: 8px;
         display: block;
       }
 
       .photo-label {
-        font-size: 12px;
-        color: #6b7280;
-        margin-top: 8px;
+        font-size: 13px;
+        color: #4b5563;
+        margin-top: 10px;
         text-align: center;
+        font-weight: 500;
       }
     </style>
   </head>
   <body>
     <div class="container">
-      <div id="football-section" class="back-nav">
+      <nav class="back-nav">
         <a href="Gallery.html">← Return to Albums</a>
-      </div>
+      </nav>
 
-      <h2 class="category-header">Football Journey</h2>
-      <div class="photo-grid">
-        <a href="images/soccer1.jpg" target="Photo" class="photo-link"
-          ><div class="photo-wrapper">
-            <img src="images/soccer1.jpg" />
-            <div class="photo-label">soccer1.jpg</div>
-          </div></a
-        >
-        <a href="images/soccer2.jpg" target="Photo" class="photo-link"
-          ><div class="photo-wrapper">
-            <img src="images/soccer2.jpg" />
-            <div class="photo-label">soccer2.jpg</div>
-          </div></a
-        >
-        <a href="images/soccer4.jpeg" target="Photo" class="photo-link"
-          ><div class="photo-wrapper">
-            <img src="images/soccer4.jpeg" />
-            <div class="photo-label">soccer4.jpeg</div>
-          </div></a
-        >
-        <a href="images/soccer5.JPG" target="Photo" class="photo-link"
-          ><div class="photo-wrapper">
-            <img src="images/soccer5.JPG" />
-            <div class="photo-label">soccer5.JPG</div>
-          </div></a
-        >
-        <a href="images/soccer6.JPG" target="Photo" class="photo-link"
-          ><div class="photo-wrapper">
-            <img src="images/soccer6.JPG" />
-            <div class="photo-label">soccer6.JPG</div>
-          </div></a
-        >
-        <a href="images/soccer7.jpeg" target="Photo" class="photo-link"
-          ><div class="photo-wrapper">
-            <img src="images/soccer7.jpeg" />
-            <div class="photo-label">soccer7.jpeg</div>
-          </div></a
-        >
-        <a href="images/soccer8.jpeg" target="Photo" class="photo-link"
-          ><div class="photo-wrapper">
-            <img src="images/soccer8.jpeg" />
-            <div class="photo-label">soccer8.jpeg</div>
-          </div></a
-        >
-        <a href="images/soccerrr.jpg" target="Photo" class="photo-link"
-          ><div class="photo-wrapper">
-            <img src="images/soccerrr.jpg" />
-            <div class="photo-label">soccerrr.jpg</div>
-          </div></a
-        >
-        <a href="images/socers.jpg" target="Photo" class="photo-link"
-          ><div class="photo-wrapper">
-            <img src="images/socers.jpg" />
-            <div class="photo-label">socers.jpg</div>
-          </div></a
-        >
-        <a href="images/socerss.jpeg" target="Photo" class="photo-link"
-          ><div class="photo-wrapper">
-            <img src="images/socerss.jpeg" />
-            <div class="photo-label">socerss.jpeg</div>
-          </div></a
-        >
-      </div>
-      <br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br />
-      <br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br />
-      <br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br />
-      <div id="personal-section" class="back-nav">
-        <a href="Gallery.html">← Return to Albums</a>
-      </div>
-      <h2 class="category-header">Personal & Education</h2>
-      <div class="photo-grid">
-        <a href="images/childhood.jpg" target="Photo" class="photo-link"
-          ><div class="photo-wrapper">
-            <img src="images/childhood.jpg" />
-            <div class="photo-label">childhood.jpg</div>
-          </div></a
-        >
-        <a href="images/childhood1.jpg" target="Photo" class="photo-link"
-          ><div class="photo-wrapper">
-            <img src="images/childhood1.jpg" />
-            <div class="photo-label">childhood1.jpg</div>
-          </div></a
-        >
-        <a href="images/childhood2.jpg" target="Photo" class="photo-link"
-          ><div class="photo-wrapper">
-            <img src="images/childhood2.jpg" />
-            <div class="photo-label">childhood2.jpg</div>
-          </div></a
-        >
-        <a href="images/teenage.jpg" target="Photo" class="photo-link"
-          ><div class="photo-wrapper">
-            <img src="images/teenage.jpg" />
-            <div class="photo-label">teenage.jpg</div>
-          </div></a
-        >
-        <a href="images/teenage1.jpg" target="Photo" class="photo-link"
-          ><div class="photo-wrapper">
-            <img src="images/teenage1.jpg" />
-            <div class="photo-label">teenage1.jpg</div>
-          </div></a
-        >
-        <a href="images/teenage life.jpg" target="Photo" class="photo-link"
-          ><div class="photo-wrapper">
-            <img src="images/teenage life.jpg" />
-            <div class="photo-label">teenage life.jpg</div>
-          </div></a
-        >
-        <a href="images/neil.jpg" target="Photo" class="photo-link"
-          ><div class="photo-wrapper">
-            <img src="images/neil.jpg" />
-            <div class="photo-label">neil.jpg</div>
-          </div></a
-        >
-        <a href="images/neil2.jpg" target="Photo" class="photo-link"
-          ><div class="photo-wrapper">
-            <img src="images/neil2.jpg" />
-            <div class="photo-label">neil2.jpg</div>
-          </div></a
-        >
-        <a href="images/neil3.jpg" target="Photo" class="photo-link"
-          ><div class="photo-wrapper">
-            <img src="images/neil3.jpg" />
-            <div class="photo-label">neil3.jpg</div>
-          </div></a
-        >
-        <a href="images/neil3(1).jpg" target="Photo" class="photo-link"
-          ><div class="photo-wrapper">
-            <img src="images/neil3(1).jpg" />
-            <div class="photo-label">neil3(1).jpg</div>
-          </div></a
-        >
-        <a href="images/college.jpg" target="Photo" class="photo-link"
-          ><div class="photo-wrapper">
-            <img src="images/college.jpg" />
-            <div class="photo-label">college.jpg</div>
-          </div></a
-        >
-        <a href="images/COLLEGE2.jpg" target="Photo" class="photo-link"
-          ><div class="photo-wrapper">
-            <img src="images/COLLEGE2.jpg" />
-            <div class="photo-label">COLLEGE2.jpg</div>
-          </div></a
-        >
-      </div>
-      <br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br />
-      <br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br />
-      <br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br />
-      <div id="tech-section" class="back-nav">
-        <a href="Gallery.html">← Return to Albums</a>
-      </div>
-      <h2 class="category-header">Tech & Other</h2>
-      <div class="photo-grid">
-        <a href="images/thecnology.avif" target="Photo" class="photo-link"
-          ><div class="photo-wrapper">
-            <img src="images/thecnology.avif" />
-            <div class="photo-label">thecnology.avif</div>
-          </div></a
-        >
-        <a href="images/planes.jpg" target="Photo" class="photo-link"
-          ><div class="photo-wrapper">
-            <img src="images/planes.jpg" />
-            <div class="photo-label">planes.jpg</div>
-          </div></a
-        >
-      </div>
-    </div>
-    <br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br />
+      <section id="places">
+        <h2 class="category-header">Travel & Places</h2>
+        <div class="photo-grid">
+          <a href="images/places/alps.jpg" target="Photo" class="photo-link"
+            ><div class="photo-wrapper">
+              <img src="images/places/alps.jpg" />
+              <div class="photo-label">Majestic Alpine Peaks</div>
+            </div></a
+          >
+          <a href="images/places/blossom.jpg" target="Photo" class="photo-link"
+            ><div class="photo-wrapper">
+              <img src="images/places/blossom.jpg" />
+              <div class="photo-label">Spring Cherry Blossoms</div>
+            </div></a
+          >
+          <a href="images/places/collage.jpg" target="Photo" class="photo-link"
+            ><div class="photo-wrapper">
+              <img src="images/places/collage.jpg" />
+              <div class="photo-label">Travel Memories Collage</div>
+            </div></a
+          >
+          <a href="images/places/france.jpg" target="Photo" class="photo-link"
+            ><div class="photo-wrapper">
+              <img src="images/places/france.jpg" />
+              <div class="photo-label">A Day in Paris</div>
+            </div></a
+          >
+          <a href="images/places/fuji.jpg" target="Photo" class="photo-link"
+            ><div class="photo-wrapper">
+              <img src="images/places/fuji.jpg" />
+              <div class="photo-label">Mount Fuji View</div>
+            </div></a
+          >
+          <a href="images/places/germany.jpg" target="Photo" class="photo-link"
+            ><div class="photo-wrapper">
+              <img src="images/places/germany.jpg" />
+              <div class="photo-label">Bavarian Architecture</div>
+            </div></a
+          >
+          <a
+            href="images/places/Invalides.jpg"
+            target="Photo"
+            class="photo-link"
+            ><div class="photo-wrapper">
+              <img src="images/places/Invalides.jpg" />
+              <div class="photo-label">Les Invalides Dome</div>
+            </div></a
+          >
+          <a href="images/places/japan.jpg" target="Photo" class="photo-link"
+            ><div class="photo-wrapper">
+              <img src="images/places/japan.jpg" />
+              <div class="photo-label">Streets of Tokyo</div>
+            </div></a
+          >
+          <a
+            href="images/places/matterhorn.jpg"
+            target="Photo"
+            class="photo-link"
+            ><div class="photo-wrapper">
+              <img src="images/places/matterhorn.jpg" />
+              <div class="photo-label">The Mighty Matterhorn</div>
+            </div></a
+          >
+          <a href="images/places/platz.jpg" target="Photo" class="photo-link"
+            ><div class="photo-wrapper">
+              <img src="images/places/platz.jpg" />
+              <div class="photo-label">The City Square</div>
+            </div></a
+          >
+          <a href="images/places/Rathaus.jpg" target="Photo" class="photo-link"
+            ><div class="photo-wrapper">
+              <img src="images/places/Rathaus.jpg" />
+              <div class="photo-label">Old Town Hall</div>
+            </div></a
+          >
+          <a href="images/places/river.jpg" target="Photo" class="photo-link"
+            ><div class="photo-wrapper">
+              <img src="images/places/river.jpg" />
+              <div class="photo-label">Calm River Flow</div>
+            </div></a
+          >
+          <a
+            href="images/places/riverparis.jpg"
+            target="Photo"
+            class="photo-link"
+            ><div class="photo-wrapper">
+              <img src="images/places/riverparis.jpg" />
+              <div class="photo-label">Sunset on the Seine</div>
+            </div></a
+          >
+          <a href="images/places/shrine.jpg" target="Photo" class="photo-link"
+            ><div class="photo-wrapper">
+              <img src="images/places/shrine.jpg" />
+              <div class="photo-label">Traditional Shrine</div>
+            </div></a
+          >
+          <a href="images/places/sign.jpg" target="Photo" class="photo-link"
+            ><div class="photo-wrapper">
+              <img src="images/places/sign.jpg" />
+              <div class="photo-label">Rustic Wayfinder</div>
+            </div></a
+          >
+          <a href="images/places/Siluwet.png" target="Photo" class="photo-link"
+            ><div class="photo-wrapper">
+              <img src="images/places/Siluwet.png" />
+              <div class="photo-label">Twilight Silhouette</div>
+            </div></a
+          >
+          <a
+            href="images/places/switzerland.jpg"
+            target="Photo"
+            class="photo-link"
+            ><div class="photo-wrapper">
+              <img src="images/places/switzerland.jpg" />
+              <div class="photo-label">Swiss Lakeside</div>
+            </div></a
+          >
+          <a
+            href="images/places/towerinside.jpg"
+            target="Photo"
+            class="photo-link"
+            ><div class="photo-wrapper">
+              <img src="images/places/towerinside.jpg" />
+              <div class="photo-label">Iron Lattice Structure</div>
+            </div></a
+          >
+          <a href="images/places/zermatt.jpg" target="Photo" class="photo-link"
+            ><div class="photo-wrapper">
+              <img src="images/places/zermatt.jpg" />
+              <div class="photo-label">Zermatt Village Life</div>
+            </div></a
+          >
+        </div>
+      </section>
+<br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br />
     <br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br />
     <br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br />
+      <section id="football">
+        <h2 class="category-header">Football Journey</h2>
+        <div class="photo-grid">
+          <a href="images/soccer1.jpg" target="Photo" class="photo-link"
+            ><div class="photo-wrapper">
+              <img src="images/soccer1.jpg" />
+              <div class="photo-label">Kickoff Moment</div>
+            </div></a
+          >
+          <a href="images/soccer2.jpg" target="Photo" class="photo-link"
+            ><div class="photo-wrapper">
+              <img src="images/soccer2.jpg" />
+              <div class="photo-label">Match Day Focus</div>
+            </div></a
+          >
+          <a href="images/soccer4.jpeg" target="Photo" class="photo-link"
+            ><div class="photo-wrapper">
+              <img src="images/soccer4.jpeg" />
+              <div class="photo-label">Midfield Strategy</div>
+            </div></a
+          >
+          <a href="images/soccer5.JPG" target="Photo" class="photo-link"
+            ><div class="photo-wrapper">
+              <img src="images/soccer5.JPG" />
+              <div class="photo-label">Winning Team Spirit</div>
+            </div></a
+          >
+          <a href="images/soccer6.JPG" target="Photo" class="photo-link"
+            ><div class="photo-wrapper">
+              <img src="images/soccer6.JPG" />
+              <div class="photo-label">Victory Celebration</div>
+            </div></a
+          >
+          <a href="images/soccer7.jpeg" target="Photo" class="photo-link"
+            ><div class="photo-wrapper">
+              <img src="images/soccer7.jpeg" />
+              <div class="photo-label">Pre-game Huddle</div>
+            </div></a
+          >
+          <a href="images/soccer8.jpeg" target="Photo" class="photo-link"
+            ><div class="photo-wrapper">
+              <img src="images/soccer8.jpeg" />
+              <div class="photo-label">Golden Goal Strike</div>
+            </div></a
+          >
+          <a href="images/soccerrr.jpg" target="Photo" class="photo-link"
+            ><div class="photo-wrapper">
+              <img src="images/soccerrr.jpg" />
+              <div class="photo-label">Training Drills</div>
+            </div></a
+          >
+          <a href="images/socers.jpg" target="Photo" class="photo-link"
+            ><div class="photo-wrapper">
+              <img src="images/socers.jpg" />
+              <div class="photo-label">On the Pitch</div>
+            </div></a
+          >
+          <a href="images/socerss.jpeg" target="Photo" class="photo-link"
+            ><div class="photo-wrapper">
+              <img src="images/socerss.jpeg" />
+              <div class="photo-label">Last Minute Save</div>
+            </div></a
+          >
+        </div>
+      </section>
+<br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br />
+    <br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br />
+    <br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br />
+      <section id="personal">
+        <h2 class="category-header">Personal & Education</h2>
+        <div class="photo-grid">
+          <a href="images/childhood.jpg" target="Photo" class="photo-link"
+            ><div class="photo-wrapper">
+              <img src="images/childhood.jpg" />
+              <div class="photo-label">Early Years</div>
+            </div></a
+          >
+          <a href="images/childhood1.jpg" target="Photo" class="photo-link"
+            ><div class="photo-wrapper">
+              <img src="images/childhood1.jpg" />
+              <div class="photo-label">Little Explorer</div>
+            </div></a
+          >
+          <a href="images/childhood2.jpg" target="Photo" class="photo-link"
+            ><div class="photo-wrapper">
+              <img src="images/childhood2.jpg" />
+              <div class="photo-label">Young Dreamer</div>
+            </div></a
+          >
+          <a href="images/teenage.jpg" target="Photo" class="photo-link"
+            ><div class="photo-wrapper">
+              <img src="images/teenage.jpg" />
+              <div class="photo-label">High School Days</div>
+            </div></a
+          >
+          <a href="images/teenage1.jpg" target="Photo" class="photo-link"
+            ><div class="photo-wrapper">
+              <img src="images/teenage1.jpg" />
+              <div class="photo-label">Youthful Adventures</div>
+            </div></a
+          >
+          <a href="images/teenage life.jpg" target="Photo" class="photo-link"
+            ><div class="photo-wrapper">
+              <img src="images/teenage life.jpg" />
+              <div class="photo-label">Growth & Friendships</div>
+            </div></a
+          >
+          <a href="images/neil.jpg" target="Photo" class="photo-link"
+            ><div class="photo-wrapper">
+              <img src="images/neil.jpg" />
+              <div class="photo-label">Neil Portrait</div>
+            </div></a
+          >
+          <a href="images/neil2.jpg" target="Photo" class="photo-link"
+            ><div class="photo-wrapper">
+              <img src="images/neil2.jpg" />
+              <div class="photo-label">Candid Reflection</div>
+            </div></a
+          >
+          <a href="images/neil3.jpg" target="Photo" class="photo-link"
+            ><div class="photo-wrapper">
+              <img src="images/neil3.jpg" />
+              <div class="photo-label">Formal Attire</div>
+            </div></a
+          >
+          <a href="images/neil3(1).jpg" target="Photo" class="photo-link"
+            ><div class="photo-wrapper">
+              <img src="images/neil3(1).jpg" />
+              <div class="photo-label">Thumbnail</div>
+            </div></a
+          >
+          <a href="images/college.jpg" target="Photo" class="photo-link"
+            ><div class="photo-wrapper">
+              <img src="images/college.jpg" />
+              <div class="photo-label">University Chapter</div>
+            </div></a
+          >
+          <a href="images/COLLEGE2.jpg" target="Photo" class="photo-link"
+            ><div class="photo-wrapper">
+              <img src="images/COLLEGE2.jpg" />
+              <div class="photo-label">Graduation Aspirations</div>
+            </div></a
+          >
+        </div>
+      </section>
+<br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br />
+    <br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br />
+    <br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br />
+      <section id="music">
+        <h2 class="category-header">Music & Media</h2>
+        <div class="photo-grid">
+          <a href="images/artist.jpg" target="Photo" class="photo-link"
+            ><div class="photo-wrapper">
+              <img src="images/artist.jpg" />
+              <div class="photo-label">Soulful Expressions</div>
+            </div></a
+          >
+          <a href="images/artist2.jpg" target="Photo" class="photo-link"
+            ><div class="photo-wrapper">
+              <img src="images/artist2.jpg" />
+              <div class="photo-label">Aesthetic Rhythms</div>
+            </div></a
+          >
+          <a href="images/artist3.jpg" target="Photo" class="photo-link"
+            ><div class="photo-wrapper">
+              <img src="images/artist3.jpg" />
+              <div class="photo-label">Indie Vibes</div>
+            </div></a
+          >
+          <a href="images/danielceasar.jpg" target="Photo" class="photo-link"
+            ><div class="photo-wrapper">
+              <img src="images/danielceasar.jpg" />
+              <div class="photo-label">Daniel Caesar Inspired</div>
+            </div></a
+          >
+          <a href="images/frankocean.jpg" target="Photo" class="photo-link"
+            ><div class="photo-wrapper">
+              <img src="images/frankocean.jpg" />
+              <div class="photo-label">Frank Ocean Influence</div>
+            </div></a
+          >
+          <a href="images/hiphop.jpg" target="Photo" class="photo-link"
+            ><div class="photo-wrapper">
+              <img src="images/hiphop.jpg" />
+              <div class="photo-label">Hip Hop Culture</div>
+            </div></a
+          >
+          <a href="images/indie.jpg" target="Photo" class="photo-link"
+            ><div class="photo-wrapper">
+              <img src="images/indie.jpg" />
+              <div class="photo-label">Underground Sounds</div>
+            </div></a
+          >
+          <a href="images/rnbAlbum.jpg" target="Photo" class="photo-link"
+            ><div class="photo-wrapper">
+              <img src="images/rnbAlbum.jpg" />
+              <div class="photo-label">Late Night R&B</div>
+            </div></a
+          >
+          <a href="images/Rex.jpg" target="Photo" class="photo-link"
+            ><div class="photo-wrapper">
+              <img src="images/Rex.jpg" />
+              <div class="photo-label">Rex Orange County Vibes</div>
+            </div></a
+          >
+        </div>
+      </section>
+<br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br />
+    <br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br />
+    <br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br />
+      <section id="tech">
+        <h2 class="category-header">Tech & Other</h2>
+        <div class="photo-grid">
+          <a href="images/thecnology.avif" target="Photo" class="photo-link"
+            ><div class="photo-wrapper">
+              <img src="images/thecnology.avif" />
+              <div class="photo-label">Future Digital Trends</div>
+            </div></a
+          >
+          <a href="images/planes.jpg" target="Photo" class="photo-link"
+            ><div class="photo-wrapper">
+              <img src="images/planes.jpg" />
+              <div class="photo-label">Aviation Engineering</div>
+            </div></a>
+
+            <a href="images/Future.jpg" target="Photo" class="photo-link"
+            ><div class="photo-wrapper">
+              <img src="images/Future.jpg" />
+              <div class="photo-label">Technology</div>
+            </div></a>
+
+            <a href="images/impact.jpg" target="Photo" class="photo-link"
+            ><div class="photo-wrapper">
+              <img src="images/impact.jpg" />
+              <div class="photo-label">Impact</div>
+            </div></a>
+
+            <a href="images/challanges.jpg" target="Photo" class="photo-link"
+            ><div class="photo-wrapper">
+              <img src="images/challanges.jpg" />
+              <div class="photo-label">Challanges</div>
+            </div></a>
+
+            <a href="images/truth.jpg" target="Photo" class="photo-link"
+            ><div class="photo-wrapper">
+              <img src="images/truth.jpg" />
+              <div class="photo-label">Truth</div>
+            </div></a>
+          <br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br />
+    <br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br />
+    <br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br />
+        </div>
+      </section>
+    </div>
   </body>
 </html>

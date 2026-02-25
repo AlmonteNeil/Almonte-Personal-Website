@@ -21,7 +21,8 @@
         border-bottom: 1px solid #ddd;
         z-index: 1000;
       }
-            h1 {
+
+      h1 {
         font-family: Georgia, serif;
         font-size: 42px;
         margin-bottom: 10px;
@@ -40,14 +41,6 @@
         justify-content: space-between;
         align-items: center;
       }
-            .section-content h1 {
-        font-size: 42px;
-        font-weight: bold;
-      }
-
-      .section-content h1 span {
-        color: #4f46e5;
-      }
 
       .nav-title {
         font-size: 22px;
@@ -64,28 +57,82 @@
         transition-duration: 0.2s;
       }
 
-    .nav-links a {
-      margin-left: 22px;
-      text-decoration: none;
-      color: #0f172a;
-      font-weight: bold;
-      position: relative;
-    }
+      .nav-links {
+        display: flex;
+        align-items: center;
+      }
 
-    .nav-links a::after {
-      content: "";
-      position: absolute;
-      left: 0;
-      bottom: -6px;
-      width: 0;
-      height: 2px;
-      background: #4f46e5;
-      transition: 0.3s;
-    }
+      .nav-links a,
+      .dropbtn {
+        margin-left: 22px;
+        text-decoration: none;
+        color: #0f172a;
+        font-weight: bold;
+        position: relative;
+        background: none;
+        border: none;
+        font-family: inherit;
+        font-size: 16px;
+        cursor: pointer;
+      }
 
-    .nav-links a:hover::after {
-      width: 100%;
-    }
+      .nav-links a::after {
+        content: "";
+        position: absolute;
+        left: 0;
+        bottom: -6px;
+        width: 0;
+        height: 2px;
+        background: #4f46e5;
+        transition: 0.3s;
+      }
+
+      .nav-links a:hover::after {
+        width: 100%;
+      }
+
+      .dropdown {
+        position: relative;
+        display: inline-block;
+      }
+
+      .dropdown-content {
+        display: none;
+        position: absolute;
+        right: 0;
+        background-color: white;
+        min-width: 160px;
+        box-shadow: 0px 10px 25px rgba(0, 0, 0, 0.1);
+        border-radius: 8px;
+        overflow: hidden;
+        margin-top: 5px;
+        border: 1px solid #e5e7eb;
+        z-index: 1001;
+      }
+
+      .dropdown-content a {
+        color: #0f172a;
+        padding: 12px 16px;
+        margin-left: 0;
+        display: block;
+        font-size: 14px;
+        transition: 0.2s;
+        text-align: left;
+      }
+
+      .dropdown-content a:hover {
+        background-color: #f1f5ff;
+        color: #4f46e5;
+      }
+
+      .dropdown-content a::after {
+        display: none;
+      }
+
+      .dropdown:hover .dropdown-content {
+        display: block;
+      }
+
       section {
         padding-top: 140px;
         padding-bottom: 100px;
@@ -110,16 +157,6 @@
         padding: 40px 30px;
       }
 
-      .section-content h1 {
-        font-size: 38px;
-        margin-bottom: 10px;
-      }
-
-      .section-content p {
-        color: #6b7280;
-        font-size: 18px;
-      }
-
       .media-buttons {
         margin-top: 40px;
       }
@@ -140,14 +177,11 @@
         top: 20px;
         left: 25px;
         text-decoration: none;
-
         color: #4f46e5;
         padding: 8px 14px;
-
         font-size: 12px;
         font-weight: bold;
         transition: 0.2s ease;
-        shadow: 0 5px 15px rgba(79, 70, 229, 0.3);
       }
 
       .go-back-btn:hover {
@@ -163,15 +197,6 @@
       .btn-outline:hover {
         background: #4f46e5;
         color: white;
-      }
-
-      .btn-solid {
-        background: #4f46e5;
-        color: white;
-      }
-
-      .btn-solid:hover {
-        background: #4338ca;
       }
 
       footer {
@@ -193,11 +218,25 @@
         <div class="nav-links">
           <a href="index.html">Home</a>
           <a href="biography.html">Biography</a>
-          <a href="blog1.html">Blog</a>
-          <a href="Gallery.html">Gallery</a>
 
+          <div class="dropdown">
+            <button class="dropbtn">Blogs ▾</button>
+            <div class="dropdown-content">
+              <a href="blog1.html">Blog 1</a>
+              <a href="blog2.html">Blog 2</a>
+              <a href="blog3.html">Blog 3</a>
+            </div>
+          </div>
+          <a href="Gallery.html">Gallery</a>
           <a href="MediaHub.html">Media Hub</a>
-          <a href="dreamplaces.html">Dream Places</a>
+
+          <div class="dropdown">
+            <button class="dropbtn">Adventure ▾</button>
+            <div class="dropdown-content">
+              <a href="dreamplaces.html">Dream Places</a>
+              <a href="bucketlist.html">Bucket List</a>
+            </div>
+          </div>
         </div>
       </div>
     </nav>

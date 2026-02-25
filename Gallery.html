@@ -10,7 +10,8 @@
         font-family: Arial, Helvetica, sans-serif;
         background-color: #f9fafb;
         color: #111827;
-        overflow-y: hidden;
+
+        overflow-y: auto;
       }
 
       nav {
@@ -46,28 +47,81 @@
         transition-duration: 0.2s;
       }
 
-    .nav-links a {
-      margin-left: 22px;
-      text-decoration: none;
-      color: #0f172a;
-      font-weight: bold;
-      position: relative;
-    }
+      .nav-links {
+        display: flex;
+        align-items: center;
+      }
 
-    .nav-links a::after {
-      content: "";
-      position: absolute;
-      left: 0;
-      bottom: -6px;
-      width: 0;
-      height: 2px;
-      background: #4f46e5;
-      transition: 0.3s;
-    }
+      .nav-links a,
+      .dropbtn {
+        margin-left: 22px;
+        text-decoration: none;
+        color: #0f172a;
+        font-weight: bold;
+        position: relative;
+        background: none;
+        border: none;
+        font-family: inherit;
+        font-size: 16px;
+        cursor: pointer;
+      }
 
-    .nav-links a:hover::after {
-      width: 100%;
-    }
+      .nav-links a::after {
+        content: "";
+        position: absolute;
+        left: 0;
+        bottom: -6px;
+        width: 0;
+        height: 2px;
+        background: #4f46e5;
+        transition: 0.3s;
+      }
+
+      .nav-links a:hover::after {
+        width: 100%;
+      }
+
+      .dropdown {
+        position: relative;
+        display: inline-block;
+      }
+
+      .dropdown-content {
+        display: none;
+        position: absolute;
+        right: 0;
+        background-color: white;
+        min-width: 160px;
+        box-shadow: 0px 10px 25px rgba(0, 0, 0, 0.1);
+        border-radius: 8px;
+        overflow: hidden;
+        margin-top: 5px;
+        border: 1px solid #e5e7eb;
+        z-index: 1001;
+      }
+
+      .dropdown-content a {
+        color: #0f172a;
+        padding: 12px 16px;
+        margin-left: 0;
+        display: block;
+        font-size: 14px;
+        transition: 0.2s;
+        text-align: left;
+      }
+
+      .dropdown-content a:hover {
+        background-color: #f1f5ff;
+        color: #4f46e5;
+      }
+
+      .dropdown-content a::after {
+        display: none;
+      }
+
+      .dropdown:hover .dropdown-content {
+        display: block;
+      }
 
       section {
         padding: 140px 20px 80px;
@@ -140,8 +194,8 @@
         color: white;
         text-align: center;
         padding: 20px;
-        position: fixed;
-        bottom: 0;
+        position: relative;
+        margin-top: 50px;
         width: 100%;
       }
     </style>
@@ -154,10 +208,25 @@
         <div class="nav-links">
           <a href="index.html">Home</a>
           <a href="biography.html">Biography</a>
-          <a href="blog1.html">Blog</a>
+
+          <div class="dropdown">
+            <button class="dropbtn">Blogs ▾</button>
+            <div class="dropdown-content">
+              <a href="blog1.html">Blog 1</a>
+              <a href="blog2.html">Blog 2</a>
+              <a href="blog3.html">Blog 3</a>
+            </div>
+          </div>
           <a href="Gallery.html">Gallery</a>
           <a href="MediaHub.html">Media Hub</a>
-          <a href="dreamplaces.html">Dream Places</a>
+
+          <div class="dropdown">
+            <button class="dropbtn">Adventure ▾</button>
+            <div class="dropdown-content">
+              <a href="dreamplaces.html">Dream Places</a>
+              <a href="bucketlist.html">Bucket List</a>
+            </div>
+          </div>
         </div>
       </div>
     </nav>
@@ -171,12 +240,7 @@
       </div>
 
       <div class="album-grid">
-        <a
-          href="photos.html#football-section"
-          class="album-card"
-          title="Football Journey"
-          rel="noopener noreferrer"
-        >
+        <a href="photos.html#football" class="album-card">
           <img
             src="images/socerss.jpeg"
             class="album-image"
@@ -188,39 +252,54 @@
           </div>
         </a>
 
-        <a
-          href="photos.html#personal-section"
-          class="album-card"
-          title="Life and Education"
-          rel="noopener noreferrer"
-        >
+        <a href="photos.html#personal" class="album-card">
           <img
             src="images/neil2.jpg"
             class="album-image"
             alt="Personal Album"
           />
           <div class="album-details">
-            <h3>Life & Education</h3>
+            <h3>Personal & Education</h3>
             <p>From childhood memories to college milestones.</p>
           </div>
         </a>
 
-        <a
-          href="photos.html#tech-section"
-          class="album-card"
-          title="Tech and Coding"
-          rel="noopener noreferrer"
-        >
+        <a href="photos.html#music" class="album-card">
+          <img
+            src="images/artist.jpg"
+            class="album-image"
+            alt="Tech Album"
+          />
+          <div class="album-details">
+            <h3>Music and media</h3>
+            <p>Productivity tools and my journey in IT.</p>
+          </div>
+        </a>
+
+        <a href="photos.html#places" class="album-card">
+          <img
+            src="images/places/matterhorn.jpg"
+            class="album-image"
+            alt="places"
+          />
+          <div class="album-details">
+            <h3>Travel & Places</h3>
+            <p>Productivity tools and my journey in IT.</p>
+          </div>
+        </a>
+
+        <a href="photos.html#tech" class="album-card">
           <img
             src="images/thecnology.avif"
             class="album-image"
             alt="Tech Album"
           />
           <div class="album-details">
-            <h3>Tech & Coding</h3>
+            <h3>Tech & Others</h3>
             <p>Productivity tools and my journey in IT.</p>
           </div>
         </a>
+
       </div>
     </section>
 

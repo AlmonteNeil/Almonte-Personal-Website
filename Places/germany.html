@@ -1,63 +1,136 @@
 <!doctype html>
 <html>
-<head>
-<title>Germany | Dream Place</title>
+  <head>
+    <title>Germany | Dream Place</title>
 
-<style>
-body {
-  font-family: Arial;
-  background: #f9fafb;
-  margin: 0;
-  text-align: center;
-  padding: 100px 20px;
-  position: relative;
-}
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        background: #f3f4f6;
+        margin: 0;
+        padding: 60px 20px;
+        color: #1f2937;
+        line-height: 1.6;
+      }
 
-.go-back-btn {
+      .container {
+        max-width: 1000px;
+        margin: 0 auto;
+        background: white;
+        padding: 80px 60px 60px 60px;
+        border-radius: 24px;
+        box-shadow: 0 10px 25px rgba(0, 0, 0, 0.05);
+        text-align: center;
+        position: relative;
+      }
+
+      .go-back-btn {
         position: absolute;
-        top: 20px;
-        left: 25px;
+        top: 30px;
+        left: 30px;
         text-decoration: none;
-
         color: #4f46e5;
-        padding: 8px 14px;
-
-        
         font-weight: bold;
-        transition: 0.2s ease;
-        shadow: 0 5px 15px rgba(79, 70, 229, 0.3);
+        font-size: 13px;
+        transition: 0.3s ease;
+        border: 1px solid #e5e7eb;
+        padding: 8px 16px;
+        background: #f9fafb;
+        border-radius: 8px;
       }
 
       .go-back-btn:hover {
-        transform: translateY(-2px);
+        background: #4f46e5;
+        color: white;
+        transform: translateX(-3px);
+        box-shadow: 0 4px 12px rgba(79, 70, 229, 0.15);
       }
 
-h1 {
-  color: #4f46e5;
-}
+      h1 {
+        color: #111827;
+        font-size: 2.8rem;
+        margin: 10px 0 20px 0;
+        letter-spacing: -1px;
+      }
 
-img {
-  width: 400px;
-  border-radius: 15px;
-  margin-top: 20px;
-}
-</style>
+      p {
+        max-width: 750px;
+        margin: 0 auto 40px auto;
+        font-size: 1.1rem;
+        color: #4b5563;
+      }
 
-</head>
-<body>
+      .image-wrapper {
+        border-radius: 15px;
+        overflow: hidden;
+        line-height: 0;
+        box-shadow: 0 15px 35px rgba(0, 0, 0, 0.12);
+      }
 
-<!-- BACK BUTTON -->
-<a href="dreamplaces.html" class="go-back-btn">← Back</a>
+      img {
+        width: 100%;
+        height: auto;
+        display: block;
+      }
 
-<h1>Japan 🇯🇵</h1>
+      area {
+        outline: none;
+      }
+    </style>
+  </head>
 
-<p>
-I want to visit Japan because of its advanced technology, beautiful
-cherry blossoms, and rich culture. I want to experience Tokyo's city life,
-anime culture, and traditional temples in Kyoto.
-</p>
+  <body>
+    <div class="container">
+      <a href="../dreamplaces.html" class="go-back-btn">← Back</a>
 
-<img src="images/japan.jpg" alt="Japan">
+      <h1>Germany 🇩🇪</h1>
 
-</body>
+      <p>
+        I want to visit Munich because of its stunning
+        <b>Gothic architecture</b>, world-famous Bavarian history, and vibrant
+        city squares. I want to experience the Glockenspiel's performance at
+        Marienplatz, the iconic twin domes of the Frauenkirche, and the
+        traditional beer garden culture in the heart of the city.
+      </p>
+
+      <div class="image-wrapper">
+        <img
+          src="../images/places/germany.jpg"
+          usemap="#germany"
+          alt="Germany"
+        />
+      </div>
+
+      <map name="germany">
+        <area
+          shape="poly"
+          coords="302,499,352,251,361,313,407,284,419,301,437,298,463,104,471,118,492,16,512,84,514,113,529,132,534,214,549,223,553,260,708,224,714,240,734,239,795,500,442,510,438,471,436,437,406,250,380,406,351,455,345,495,321,498,313,505"
+          href="../Descriptionplaces/germany-detail.html#Mariensaule"
+          alt="Mariensäule"
+          title="Mariensäule"
+        />
+        <area
+          shape="poly"
+          coords="780,201,812,192,792,117,833,185,858,182,842,132,863,162,875,155,867,134,889,127,867,76,900,101,885,62,923,94,913,60,952,111,971,105,989,129,1000,136,998,507,855,512,782,268,764,228,786,222"
+          href="../Descriptionplaces/germany-detail.html#Mariensaule"
+          alt="Mariensäule"
+          title="Mariensäule"
+        />
+        <area
+          shape="poly"
+          href="../Descriptionplaces/germany-detail.html#rathus"
+          coords="315,521,321,501,355,497,354,468,381,450,406,292,411,450,427,466,427,523"
+          alt="Neues Rathaus"
+          title="Neues Rathaus"
+        />
+        <area
+          shape="poly"
+          coords="634,0,631,28,643,42,646,55,646,79,670,95,698,97,702,117,578,168,581,193,712,140,726,194,712,207,718,233,737,231,831,559,868,560,759,228,779,216,770,184,748,191,717,90,754,41,750,17,736,2"
+          href="../Descriptionplaces/germany-detail.html#Marienplatz"
+          alt="Marienplatz"
+          title="Marienplatz"
+        />
+      </map>
+    </div>
+  </body>
 </html>
